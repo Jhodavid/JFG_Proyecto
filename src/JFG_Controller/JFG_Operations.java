@@ -10,5 +10,5 @@ package JFG_Controller;
  * @author jhoda
  */
 public class JFG_Operations {
-    
+
 }
