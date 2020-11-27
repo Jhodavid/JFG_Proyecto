@@ -10,7 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -19,8 +22,17 @@ import javafx.scene.control.Label;
  */
 public class JFG_LogginFXMLController implements Initializable {
 
-    @FXML
     private Label theLabel;
+    @FXML
+    private TextField TxtUsuario;
+    @FXML
+    private TextField TxtContraseña;
+    @FXML
+    private Button BtIngresar;
+    @FXML
+    private ImageView ImgUser;
+    @FXML
+    private Label LbTitulo;
 
     /**
      * Initializes the controller class.
@@ -32,7 +44,7 @@ public class JFG_LogginFXMLController implements Initializable {
 
     @FXML
     private void handeButton(ActionEvent event) {
-        theLabel.setText("Loggin");
+        
     }
     
 }
