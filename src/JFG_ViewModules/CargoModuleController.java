@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 /**
@@ -18,20 +20,33 @@ import javafx.scene.control.TextField;
  * @author jhoda
  */
 public class CargoModuleController implements Initializable {
-
+    
     @FXML
     private TextField txt_id;
     @FXML
     private TextField txt_nombre;
     @FXML
     private Button bt_registrar;
+    @FXML
+    private TableColumn<?, ?> tb_id;
+    @FXML
+    private TableColumn<?, ?> tb_nombre;
+    @FXML
+    private TableColumn<?, ?> tb_salario;
+    @FXML
+    private TextField txt_salario;
+    @FXML
+    private Button bt_modificar;
+    @FXML
+    private TableView<?> CargoTable;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
+    
     
 }
