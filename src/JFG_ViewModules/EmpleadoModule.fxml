@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_ViewModules.EmpleadoModuleController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="978.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="JFG_ViewModules.EmpleadoModuleController">
+   <children>
+      <Label layoutX="18.0" layoutY="72.0" text="DNI" />
+      <TextField fx:id="txt_dni" layoutX="157.0" layoutY="68.0" />
+      <Button fx:id="bt_buscar" layoutX="325.0" layoutY="34.0" mnemonicParsing="false" text="Buscar" />
+      <Label layoutX="18.0" layoutY="38.0" text="ID" />
+      <Label layoutX="15.0" layoutY="108.0" text="Nombres" />
+      <Label layoutX="15.0" layoutY="141.0" text="Apellidos" />
+      <Label layoutX="16.0" layoutY="172.0" text="Correo" />
+      <Label layoutX="19.0" layoutY="206.0" text="Cargo" />
+      <Label layoutX="13.0" layoutY="240.0" text="Fecha de inicio contrato" />
+      <Label layoutX="13.0" layoutY="277.0" text="Fecha final contrato" />
+      <Label layoutX="15.0" layoutY="308.0" text="Usuario" />
+      <Label layoutX="10.0" layoutY="339.0" text="Contraseña" />
+      <TextField fx:id="txt_nombres" layoutX="157.0" layoutY="104.0" />
+      <TextField fx:id="txt_apellidos" layoutX="157.0" layoutY="137.0" />
+      <TextField fx:id="txt_correo" layoutX="157.0" layoutY="168.0" />
+      <TextField fx:id="txt_id" layoutX="157.0" layoutY="34.0" promptText="Digite ID" />
+      <ComboBox layoutX="156.0" layoutY="202.0" prefWidth="150.0" />
+      <DatePicker fx:id="date_fechainicio" layoutX="157.0" layoutY="236.0" prefHeight="25.0" prefWidth="150.0" />
+      <DatePicker fx:id="date_fechafin" layoutX="157.0" layoutY="273.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="txt_usuario" layoutX="158.0" layoutY="304.0" />
+      <TextField fx:id="txt_contraseña" layoutX="158.0" layoutY="335.0" />
+      <Button fx:id="bt_registrar" layoutX="325.0" layoutY="335.0" mnemonicParsing="false" text="Registrar" />
+      <Separator layoutX="426.0" layoutY="21.0" orientation="VERTICAL" prefHeight="361.0" prefWidth="0.0" />
+      <TableView layoutX="448.0" layoutY="37.0" prefHeight="200.0" prefWidth="511.0">
+        <columns>
+          <TableColumn fx:id="tb_id" prefWidth="51.0" text="ID" />
+          <TableColumn fx:id="tb_dni" prefWidth="99.0" text="DNI" />
+            <TableColumn fx:id="tb_nombres" prefWidth="75.0" text="Nombres" />
+            <TableColumn fx:id="tb_apellidos" prefWidth="75.0" text="Apellidos" />
+            <TableColumn fx:id="tb_correo" prefWidth="141.0" text="Correo" />
+            <TableColumn fx:id="tb_cargo" minWidth="9.0" prefWidth="69.0" text="Cargo" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
