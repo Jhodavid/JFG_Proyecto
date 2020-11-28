@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_ViewModules.ClienteModuleController">
+<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_ViewModules.ClienteModuleController">
    <children>
       <Label layoutX="35.0" layoutY="40.0" text="ID" />
       <Label layoutX="30.0" layoutY="72.0" text="DNI" />
@@ -20,17 +21,20 @@
       <TextField fx:id="txt_apellidos" layoutX="94.0" layoutY="149.0" />
       <TextField fx:id="txt_correo" layoutX="94.0" layoutY="188.0" />
       <Label layoutX="22.0" layoutY="192.0" text="Correo" />
-      <Button fx:id="bt_buscar" layoutX="282.0" layoutY="36.0" mnemonicParsing="false" text="Buscar" />
-      <Button fx:id="bt_registrar" layoutX="262.0" layoutY="188.0" mnemonicParsing="false" text="Registrar" />
-      <Separator layoutX="353.0" layoutY="22.0" orientation="VERTICAL" prefHeight="361.0" prefWidth="0.0" />
-      <TableView layoutX="359.0" layoutY="43.0" prefHeight="254.0" prefWidth="461.0">
+      <Button fx:id="bt_buscar" layoutX="272.0" layoutY="36.0" mnemonicParsing="false" text="Buscar" />
+      <Button fx:id="bt_registrar" layoutX="265.0" layoutY="228.0" mnemonicParsing="false" text="Registrar" />
+      <TableView layoutX="27.0" layoutY="353.0" prefHeight="254.0" prefWidth="536.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="47.0" text="ID" />
           <TableColumn fx:id="tb_dni" prefWidth="103.0" text="DNI" />
             <TableColumn fx:id="tb_nombres" prefWidth="75.0" text="Nombres" />
             <TableColumn fx:id="tb_apellidos" prefWidth="75.0" text="Apellidos" />
             <TableColumn fx:id="tb_correo" prefWidth="159.0" text="Correo" />
+            <TableColumn fx:id="tb_tipocliente" prefWidth="75.0" text="Tipo Cliente" />
         </columns>
       </TableView>
+      <Separator layoutX="36.0" layoutY="318.0" prefHeight="0.0" prefWidth="516.0" />
+      <Label layoutX="20.0" layoutY="232.0" text="Tipo cliente" />
+      <ComboBox fx:id="cbx_tipocliente" layoutX="94.0" layoutY="228.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
