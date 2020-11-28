@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.JFG_LogginFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.JFG_LogginFXMLController">
    <children>
       <Button fx:id="BtIngresar" layoutX="135.0" layoutY="248.0" mnemonicParsing="false" onAction="#handeButton" prefHeight="31.0" prefWidth="92.0" text="Ingresar" />
       <Label fx:id="LbTitulo" layoutX="55.0" layoutY="16.0" prefHeight="27.0" prefWidth="260.0" text="Just Final Generation">
@@ -37,5 +37,6 @@
          </image>
       </ImageView>
       <Separator layoutX="11.0" layoutY="47.0" prefHeight="3.0" prefWidth="327.0" />
+      <Label layoutX="55.0" layoutY="77.0" text="Label" />
    </children>
 </AnchorPane>
