@@ -13,7 +13,7 @@ public class JFG_Loggin extends Application{
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("CargoModule.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("Hello World");
+        stage.setTitle("Hello World");      
         stage.setScene(scene);
         stage.show();
     }
