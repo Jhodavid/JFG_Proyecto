@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmpleadoModuleController">
+<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.EmpleadoModuleController">
    <children>
       <Label layoutX="14.0" layoutY="100.0" text="DNI" />
       <TextField fx:id="txt_dni" layoutX="158.0" layoutY="96.0" prefHeight="25.0" prefWidth="150.0" />

@@ -20,15 +20,13 @@ public class MysqlConnect {
     String url = "jdbc:mysql://localhost:3306/jfgdb";
     Connection con;
     
-    public void Conexion(){
+    public Connection Conexion(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url,usuario,clave);
         } catch (Exception e) {
         }
-    }
-    
-    public Connection getConnection(){
         return con;
     }
+    
 }

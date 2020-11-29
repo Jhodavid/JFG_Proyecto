@@ -8,13 +8,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CargoModuleController">
+<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.CargoModuleController">
    <children>
       <Label layoutX="275.0" layoutY="204.0" text="Salario" />
       <TextField fx:id="txt_id" layoutX="218.0" layoutY="97.0" promptText="Digite la ID" />
       <Label layoutX="245.0" layoutY="139.0" text="Nombre del cargo" />
       <TextField fx:id="txt_nombre" layoutX="221.0" layoutY="167.0" promptText="Digite el nombre" />
-      <Button fx:id="bt_registrar" layoutX="189.0" layoutY="264.0" mnemonicParsing="false" text="Registrar" />
+      <Button fx:id="bt_registrar" layoutX="189.0" layoutY="264.0" mnemonicParsing="false" onAction="#bt_registrarAction" text="Registrar" />
       <Separator layoutX="37.0" layoutY="305.0" prefHeight="0.0" prefWidth="549.0" />
       <TableView fx:id="CargoTable" layoutX="52.0" layoutY="325.0" prefHeight="200.0" prefWidth="499.0">
         <columns>
@@ -26,6 +26,5 @@
       <Label layoutX="272.0" layoutY="63.0" text="ID cargo" />
       <TextField fx:id="txt_salario" layoutX="220.0" layoutY="229.0" promptText="Digite el salario " />
       <Button fx:id="bt_modificar" layoutX="334.0" layoutY="264.0" mnemonicParsing="false" text="Modificar" />
-      <TextField fx:id="txt_id1" layoutX="393.0" layoutY="85.0" promptText="Digite la ID" />
    </children>
 </AnchorPane>

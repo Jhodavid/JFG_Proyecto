@@ -45,8 +45,6 @@ public class CargoModuleController implements Initializable {
     private Button bt_modificar;
     @FXML
     private TableView<ResultSet> CargoTable;
-    @FXML
-    private TextField txt_id1;
 
     /**
      * Initializes the controller class.
@@ -55,6 +53,10 @@ public class CargoModuleController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
     }    
+
+    @FXML
+    private void bt_registrarAction(ActionEvent event) {
+        op.InsertCargos("insert into jfg_cargo values(null,"+txt_nombre.getText()+","+txt_salario.getText()+")");
+    }
     
-   
 }

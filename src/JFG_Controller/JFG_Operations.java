@@ -3,6 +3,7 @@ package JFG_Controller;
 
 import JFG_Controller.MysqlConnect;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +19,7 @@ public class JFG_Operations {
     public ResultSet ListarCargos(String sql){
         
         try {
-            cn = con.getConnection();
+            cn = con.Conexion();
             st = cn.createStatement();
             rs = st.executeQuery(sql);
         } catch (Exception e) {
@@ -26,11 +27,12 @@ public class JFG_Operations {
         return rs;
     }
     
-    public void InserCargos(String sql){
+    public void InsertCargos(String sql){
         try {
-            cn = con.getConnection();
+            cn = con.Conexion();
             st = cn.createStatement();
             st.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Registro exitoso.");
         } catch (Exception e) {
         }
     }
