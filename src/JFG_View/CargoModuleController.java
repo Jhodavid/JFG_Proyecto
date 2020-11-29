@@ -18,8 +18,10 @@ import JFG_Controller.JFG_Operations;
 import javafx.event.ActionEvent;
 import JFG_Controller.MysqlConnect;
 import JFG_Models.ModelCargo;
+import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,6 +46,9 @@ public class CargoModuleController implements Initializable {
     Connection con;
     Statement stmt;
     ResultSet rs;
+    PreparedStatement pst = null;
+    
+    int index = -1;
     
     @FXML
     private TextField txt_id;
@@ -64,7 +69,8 @@ public class CargoModuleController implements Initializable {
     @FXML
     private Button bt_modificar;
     
-    
+    //--
+    //Metodo para listar en la tabla
     public void Listar(){
         
         ObservableList<ModelCargo> cargoList = FXCollections.observableArrayList();
@@ -95,7 +101,19 @@ public class CargoModuleController implements Initializable {
             CargoTable.setItems(cargoList);
     }
     
-
+    //Metodo para objeto seleccionado
+    @FXML
+    private void getSelectedMouse(javafx.scene.input.MouseEvent event) {
+        index = CargoTable.getSelectionModel().getSelectedIndex();
+        if(index <= -1){
+            return;
+        }
+        txt_id.setText(tb_id.getCellData(index).toString());
+        txt_nombre.setText(tb_nombre.getCellData(index).toString());
+        txt_salario.setText(tb_salario.getCellData(index).toString());
+    }    
+    
+    //--
 
     /**
      * Initializes the controller class.
@@ -110,11 +128,6 @@ public class CargoModuleController implements Initializable {
     private void bt_registrarAction(ActionEvent event) {
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
             stmt.executeUpdate("insert into jfg_cargo values(null,'" + txt_nombre.getText() + "'," + txt_salario.getText() + ")");
@@ -126,4 +139,27 @@ public class CargoModuleController implements Initializable {
         }
         Listar();
     }
+    
+    @FXML
+    private void Edit(ActionEvent event) {
+        
+        try {
+            con = DriverManager.getConnection(url, usuario, clave);
+            String value1 = txt_id.getText();
+            String value2 = txt_nombre.getText();
+            String value3 = txt_salario.getText();
+            
+            String sql = "update JFG_Cargo set Car_Id='"+value1+"',Car_Nombre='"+value2
+                    +"',Car_Salario='"+value3+"' where Car_Id='"+value1+"'";
+                    
+            pst = con.prepareStatement(sql);
+            pst.execute();
+            Listar();
+        } catch (Exception e) {
+        }
+    }
+
+    
+
+    
 }
