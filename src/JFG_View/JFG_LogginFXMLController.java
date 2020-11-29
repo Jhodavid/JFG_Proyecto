@@ -30,9 +30,7 @@ public class JFG_LogginFXMLController implements Initializable {
     @FXML
     private Button BtIngresar;
     @FXML
-    private ImageView ImgUser;
-    @FXML
-    private Label LbTitulo;
+    private Button BtRegistrar;
 
     /**
      * Initializes the controller class.
