@@ -4,7 +4,6 @@ package JFG_Controller;
 import JFG_Controller.MysqlConnect;
 import java.sql.*;
 
-
 /**
  *
  * @author jhoda

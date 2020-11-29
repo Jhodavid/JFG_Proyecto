@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JFG_ViewModules;
+package JFG_View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author jhoda
  */
-public class TipoServicioModuleController implements Initializable {
+public class ProveedorModuleController implements Initializable {
 
     /**
      * Initializes the controller class.

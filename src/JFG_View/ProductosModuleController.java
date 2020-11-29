@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JFG_ViewModules;
+package JFG_View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 /**
@@ -19,34 +19,39 @@ import javafx.scene.control.TextField;
  *
  * @author jhoda
  */
-public class CargoModuleController implements Initializable {
-    
+public class ProductosModuleController implements Initializable {
+
     @FXML
-    private TextField txt_id;
+    private ComboBox<?> cbx_estado;
     @FXML
-    private TextField txt_nombre;
+    private TextField txt_nom;
     @FXML
     private Button bt_registrar;
+    @FXML
+    private Button bt_buscar;
+    @FXML
+    private TextField txt_pro;
+    @FXML
+    private TextField txt_desc;
+    @FXML
+    private TextField txt_precio;
     @FXML
     private TableColumn<?, ?> tb_id;
     @FXML
     private TableColumn<?, ?> tb_nombre;
     @FXML
-    private TableColumn<?, ?> tb_salario;
+    private TableColumn<?, ?> tb_precio;
     @FXML
-    private TextField txt_salario;
+    private TableColumn<?, ?> tb_estado;
     @FXML
-    private Button bt_modificar;
-    @FXML
-    private TableView<?> CargoTable;
+    private TableColumn<?, ?> tb_desc;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        // TODO
     }    
-    
     
 }

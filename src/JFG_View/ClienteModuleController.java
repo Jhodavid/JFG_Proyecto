@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JFG_ViewModules;
+package JFG_View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 
@@ -19,32 +18,32 @@ import javafx.scene.control.TextField;
  *
  * @author jhoda
  */
-public class ProductosModuleController implements Initializable {
+public class ClienteModuleController implements Initializable {
 
     @FXML
-    private ComboBox<?> cbx_estado;
+    private TextField txt_id;
     @FXML
-    private TextField txt_nom;
+    private TextField txt_dni;
     @FXML
-    private Button bt_registrar;
+    private TextField txt_nombre;
+    @FXML
+    private TextField txt_apellidos;
+    @FXML
+    private TextField txt_correo;
     @FXML
     private Button bt_buscar;
     @FXML
-    private TextField txt_pro;
-    @FXML
-    private TextField txt_desc;
-    @FXML
-    private TextField txt_precio;
+    private Button bt_registrar;
     @FXML
     private TableColumn<?, ?> tb_id;
     @FXML
-    private TableColumn<?, ?> tb_nombre;
+    private TableColumn<?, ?> tb_dni;
     @FXML
-    private TableColumn<?, ?> tb_precio;
+    private TableColumn<?, ?> tb_nombres;
     @FXML
-    private TableColumn<?, ?> tb_estado;
+    private TableColumn<?, ?> tb_apellidos;
     @FXML
-    private TableColumn<?, ?> tb_desc;
+    private TableColumn<?, ?> tb_correo;
 
     /**
      * Initializes the controller class.

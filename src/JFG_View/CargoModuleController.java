@@ -3,65 +3,58 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JFG_ViewModules;
+package JFG_View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+
+import JFG_Controller.JFG_Operations;
+import java.sql.*;
 
 /**
  * FXML Controller class
  *
  * @author jhoda
  */
-public class EmpleadoModuleController implements Initializable {
-
-    @FXML
-    private TextField txt_dni;
-    @FXML
-    private Button bt_buscar;
-    @FXML
-    private TextField txt_nombres;
-    @FXML
-    private TextField txt_apellidos;
-    @FXML
-    private TextField txt_correo;
+public class CargoModuleController implements Initializable {
+    
+    JFG_Operations op = new JFG_Operations();
+    
     @FXML
     private TextField txt_id;
     @FXML
-    private DatePicker date_fechainicio;
-    @FXML
-    private DatePicker date_fechafin;
-    @FXML
-    private TextField txt_usuario;
-    @FXML
-    private TextField txt_contraseña;
+    private TextField txt_nombre;
     @FXML
     private Button bt_registrar;
     @FXML
     private TableColumn<?, ?> tb_id;
     @FXML
-    private TableColumn<?, ?> tb_dni;
+    private TableColumn<?, ?> tb_nombre;
     @FXML
-    private TableColumn<?, ?> tb_nombres;
+    private TableColumn<?, ?> tb_salario;
     @FXML
-    private TableColumn<?, ?> tb_apellidos;
+    private TextField txt_salario;
     @FXML
-    private TableColumn<?, ?> tb_correo;
+    private Button bt_modificar;
     @FXML
-    private TableColumn<?, ?> tb_cargo;
+    private TableView<ResultSet> CargoTable;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ResultSet table = op.ListarCargos("Select * from JFG_Cargo");
+        while(table.next()){
+            
+        }
     }    
+    
     
 }
