@@ -19,14 +19,23 @@ public class MysqlConnect {
     String clave = "";
     String url = "jdbc:mysql://localhost:3306/jfgdb";
     Connection con;
+    Statement stmt;
+    ResultSet rs;
     
     public Connection Conexion(){
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(url,usuario,clave);
-        } catch (Exception e) {
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        try {
+            con = DriverManager.getConnection(url,usuario,clave);
+        } catch (SQLException ex) {
+            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         return con;
     }
-    
 }
