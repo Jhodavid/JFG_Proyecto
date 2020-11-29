@@ -52,13 +52,13 @@ public class CargoModuleController implements Initializable {
             stmt = con.createStatement();
             rs = stmt.executeQuery("select * from jfg_cargo");
             
-            while(rs.next()){
+            /*while(rs.next()){
                 txt_id.setCellValueFactory(new PropertyValueFactory<ResultSet, Integer>(rs.getInt("Car_id")));
                 txt_nombre.setCellValueFactory(new PropertyValueFactory<ResultSet, String>(rs.getString("Car_Cargo")));
                 txt_salario.setCellValueFactory(new PropertyValueFactory<ResultSet, Double>(rs.getDouble("Car_Salario")));
 
                 CargoTable.getItems().setAll(rs);
-            }
+            }*/
             
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
         } catch (SQLException ex) {
