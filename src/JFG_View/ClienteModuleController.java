@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 
@@ -44,6 +45,10 @@ public class ClienteModuleController implements Initializable {
     private TableColumn<?, ?> tb_apellidos;
     @FXML
     private TableColumn<?, ?> tb_correo;
+    @FXML
+    private TableColumn<?, ?> tb_tipocliente;
+    @FXML
+    private ComboBox<?> cbx_tipocliente;
 
     /**
      * Initializes the controller class.

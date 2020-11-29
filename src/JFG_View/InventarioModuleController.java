@@ -7,7 +7,11 @@ package JFG_View;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -15,6 +19,19 @@ import javafx.fxml.Initializable;
  * @author jhoda
  */
 public class InventarioModuleController implements Initializable {
+
+    @FXML
+    private TextField txt_id;
+    @FXML
+    private TextField txt_nombre;
+    @FXML
+    private Button bt_buscar;
+    @FXML
+    private TableColumn<?, ?> tb_id;
+    @FXML
+    private TableColumn<?, ?> tb_nombre;
+    @FXML
+    private TableColumn<?, ?> tb_cantidad;
 
     /**
      * Initializes the controller class.

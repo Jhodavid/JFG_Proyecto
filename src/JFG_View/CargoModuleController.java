@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 
 import JFG_Controller.JFG_Operations;
 import java.sql.*;
+import javafx.event.ActionEvent;
 
 /**
  * FXML Controller class
@@ -44,17 +45,16 @@ public class CargoModuleController implements Initializable {
     private Button bt_modificar;
     @FXML
     private TableView<ResultSet> CargoTable;
+    @FXML
+    private TextField txt_id1;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ResultSet table = op.ListarCargos("Select * from JFG_Cargo");
-        while(table.next()){
-            
-        }
+        
     }    
     
-    
+   
 }

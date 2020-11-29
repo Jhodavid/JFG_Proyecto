@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
@@ -55,6 +56,12 @@ public class EmpleadoModuleController implements Initializable {
     private TableColumn<?, ?> tb_correo;
     @FXML
     private TableColumn<?, ?> tb_cargo;
+    @FXML
+    private ComboBox<?> cbx_cargo;
+    @FXML
+    private TableColumn<?, ?> tb_estado;
+    @FXML
+    private ComboBox<?> cbx_estado;
 
     /**
      * Initializes the controller class.

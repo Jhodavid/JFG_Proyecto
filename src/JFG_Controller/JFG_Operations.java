@@ -25,4 +25,13 @@ public class JFG_Operations {
         }
         return rs;
     }
+    
+    public void InserCargos(String sql){
+        try {
+            cn = con.getConnection();
+            st = cn.createStatement();
+            st.executeUpdate(sql);
+        } catch (Exception e) {
+        }
+    }
 }

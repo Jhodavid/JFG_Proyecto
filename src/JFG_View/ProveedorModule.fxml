@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="JFG_ViewModules.ProveedorModuleController">
+<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="ProveedorModuleController">
    <children>
       <Label layoutX="295.0" layoutY="27.0" text="ID" />
       <TextField fx:id="txt_id" layoutX="226.0" layoutY="59.0" promptText="Ingrese ID provedor" />
