@@ -152,26 +152,16 @@ public class CargoModuleController implements Initializable {
         } else {
             try {
                 con = DriverManager.getConnection(url, usuario, clave);
-                String sql = "update JFG_Cargo "
-                        + "set"
-                        + "'Car_Id' = ?, "
-                        + "'Car_Cargo' = ?, "
-                        + "'Car_Salario' = ? "
-                        + "where 'Car_Id' = ?;";
                 
-                sql = "UPDATE jfg_cargo SET Car_Id=?,Car_Cargo=?,Car_Salario=? WHERE "+txt_id.getText();
-                
-                pst = con.prepareStatement(sql);
-
-                pst.setString(1, txt_id.getText());
-                pst.setString(2, txt_nombre.getText());
-                pst.setString(3, txt_salario.getText());
-
-                pst.executeUpdate();
+                stmt = con.createStatement();
+                stmt.executeUpdate("update jfg_cargo set car_id = "+txt_id.getText()+","+"car_cargo = '"+
+                        txt_nombre.getText()+"',car_salario = "+txt_salario.getText()+" where car_id = "+txt_id.getText());
 
                 Listar();
-            } catch (Exception e) {
-            }
+                
+            } catch (SQLException ex) {
+            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+        }
         }
 
         /*
