@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -26,11 +27,11 @@ public class JFG_LogginFXMLController implements Initializable {
     @FXML
     private TextField TxtUsuario;
     @FXML
-    private TextField TxtContraseña;
-    @FXML
     private Button BtIngresar;
     @FXML
     private Button btSalir;
+    @FXML
+    private PasswordField TxtContrseña;
 
     /**
      * Initializes the controller class.

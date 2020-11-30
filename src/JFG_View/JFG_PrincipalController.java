@@ -5,15 +5,24 @@
  */
 package JFG_View;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -52,17 +61,28 @@ public class JFG_PrincipalController implements Initializable {
     private Label NombrePerIng;
     @FXML
     private Label CargoPerIng;
-    @FXML
+
     private Pane IdPane;
     @FXML
-    private ScrollPane IdScrollPane;
+    private Button BtCerrarSesión;
+    @FXML
+    private AnchorPane IdAnchorPane;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         // TODO
-    }    
-    
+    }
+
+    @FXML
+    private void FacturaAction(ActionEvent event) throws IOException {
+        
+        AnchorPane root1 = FXMLLoader.load(getClass().getResource("FacturaModule.fxml"));  
+        IdAnchorPane.getChildren().add(root1);   
+            
+    }
+
 }

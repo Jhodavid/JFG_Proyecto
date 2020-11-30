@@ -12,10 +12,10 @@ import javafx.stage.StageStyle;
 public class JFG_Loggin extends Application{
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("CargoModule.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("JFG_Principal.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Principal");
-        //stage.initStyle(StageStyle.UNDECORATED);
+        stage.initStyle(StageStyle.UNDECORATED);
         //PARA QUITAR EL CERRAR, MINIMIZAR Y AGRANDAR VENTANA         
         stage.setScene(scene);
         stage.show();
