@@ -6,14 +6,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class JFG_Loggin extends Application{
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("TipoServicioModule.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("JFG_Principal.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("Hello World");      
+        stage.setTitle("Principal");
+        //stage.initStyle(StageStyle.UNDECORATED);
+        //PARA QUITAR EL CERRAR, MINIMIZAR Y AGRANDAR VENTANA         
         stage.setScene(scene);
         stage.show();
     }
