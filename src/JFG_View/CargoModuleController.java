@@ -60,15 +60,19 @@ public class CargoModuleController implements Initializable {
     @FXML
     private TableView<ModelCargo> CargoTable;
     @FXML
-    private TableColumn<ModelCargo, Integer> tb_id;
+    private TableColumn<ModelCargo, String> tb_id;
     @FXML
     private TableColumn<ModelCargo, String> tb_nombre;
     @FXML
-    private TableColumn<ModelCargo, Double> tb_salario;
+    private TableColumn<ModelCargo, String> tb_salario;
     @FXML
     private TextField txt_salario;
     @FXML
     private Button bt_modificar;
+    @FXML
+    private Button bt_eliminar;
+    @FXML
+    private Button bt_nuevo;
 
     //--
     //Metodo para listar en la tabla
@@ -88,7 +92,7 @@ public class CargoModuleController implements Initializable {
             rs = stmt.executeQuery("select * from jfg_cargo");
 
             while (rs.next()) {
-                cargoList.add(new ModelCargo(Integer.parseInt(rs.getString("Car_Id")), rs.getString("Car_Cargo"), Double.parseDouble(rs.getString("Car_Salario"))));
+                cargoList.add(new ModelCargo(rs.getString("Car_Id"), rs.getString("Car_Cargo"), rs.getString("Car_Salario")));
             }
 
         } catch (SQLException ex) {
@@ -101,6 +105,13 @@ public class CargoModuleController implements Initializable {
 
         CargoTable.setItems(cargoList);
     }
+    
+    public void Nuevo(){
+            txt_id.setText("");
+            txt_nombre.setText("");
+            txt_salario.setText("");
+            index = -1;
+    }
 
     //Metodo para objeto seleccionado
     @FXML
@@ -109,9 +120,9 @@ public class CargoModuleController implements Initializable {
         if (index <= -1) {
             return;
         }
-        txt_id.setText(tb_id.getCellData(index).toString());
-        txt_nombre.setText(tb_nombre.getCellData(index).toString());
-        txt_salario.setText(tb_salario.getCellData(index).toString());
+        txt_id.setText(tb_id.getCellData(index));
+        txt_nombre.setText(tb_nombre.getCellData(index));
+        txt_salario.setText(tb_salario.getCellData(index));
     }
 
     //--
@@ -120,7 +131,7 @@ public class CargoModuleController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        txt_id.setEditable(false);
         Listar();
     }
 
@@ -128,12 +139,11 @@ public class CargoModuleController implements Initializable {
     private void bt_registrarAction(ActionEvent event) {
 
         try {
-            con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
             stmt.executeUpdate("insert into jfg_cargo values(null,'" + txt_nombre.getText() + "'," + txt_salario.getText() + ")");
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
-            txt_nombre.setText("");
-            txt_salario.setText("");
+            Nuevo();
+            index = -1;
         } catch (SQLException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -151,18 +161,45 @@ public class CargoModuleController implements Initializable {
             alert.showAndWait();
         } else {
             try {
-                con = DriverManager.getConnection(url, usuario, clave);
-                
                 stmt = con.createStatement();
                 stmt.executeUpdate("update jfg_cargo set car_id = "+txt_id.getText()+","+"car_cargo = '"+
                         txt_nombre.getText()+"',car_salario = "+txt_salario.getText()+" where car_id = "+txt_id.getText());
-
+                Nuevo();
                 Listar();
-                
+                index = -1;
             } catch (SQLException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
+
+    @FXML
+    private void Deleted(ActionEvent event) {
+        
+        if (index == -1) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debe seleccionar un cargo");
+            alert.showAndWait();
+        } else {
+            try {
+                stmt = con.createStatement();
+                stmt.executeUpdate("delete from jfg_cargo where car_id = "+txt_id.getText());
+                Nuevo();
+                Listar();
+                index = -1;
+            } catch (SQLException ex) {
+            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    @FXML
+    private void bt_nuevoAction(ActionEvent event) {
+        Nuevo();
+    }
+    
+    
 
 }
