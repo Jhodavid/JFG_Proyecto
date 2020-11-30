@@ -82,7 +82,7 @@ public class CargoModuleController implements Initializable {
         }
         
         try {
-            con = DriverManager.getConnection(this.url, usuario, clave);
+            con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
             rs = stmt.executeQuery("select * from jfg_cargo");
             
@@ -144,16 +144,21 @@ public class CargoModuleController implements Initializable {
     private void Edit(ActionEvent event) {
         
         try {
-            con = DriverManager.getConnection(url, usuario, clave);
-            String value1 = txt_id.getText();
-            String value2 = txt_nombre.getText();
-            String value3 = txt_salario.getText();
+            String sql = "update JFG_Cargo "
+                    +"set"
+                    +"'Car_Id' = ?, "
+                    +"'Car_Cargo' = ?, "
+                    +"'Car_Salario' = ? "
+                    +"where 'Car_Id' = ?;";
             
-            String sql = "update JFG_Cargo set Car_Id='"+value1+"',Car_Nombre='"+value2
-                    +"',Car_Salario='"+value3+"' where Car_Id='"+value1+"'";
-                    
             pst = con.prepareStatement(sql);
-            pst.execute();
+            
+            pst.setString(1, txt_id.getText());
+            pst.setString(2, txt_nombre.getText());
+            pst.setString(3, txt_salario.getText());
+            
+            pst.executeUpdate();
+
             Listar();
         } catch (Exception e) {
         }
