@@ -161,29 +161,8 @@ public class CargoModuleController implements Initializable {
                 
             } catch (SQLException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        }
-
-        /*
-        try {
-            String sql = "update JFG_Cargo "
-                    +"set"
-                    +"'Car_Id' = ?, "
-                    +"'Car_Cargo' = ?, "
-                    +"'Car_Salario' = ? "
-                    +"where 'Car_Id' = ?;";
-            
-            pst = con.prepareStatement(sql);
-            
-            pst.setString(1, txt_id.getText());
-            pst.setString(2, txt_nombre.getText());
-            pst.setString(3, txt_salario.getText());
-            
-            pst.executeUpdate();
-
-            Listar();
-        } catch (Exception e) {
-        }*/
     }
 
 }
