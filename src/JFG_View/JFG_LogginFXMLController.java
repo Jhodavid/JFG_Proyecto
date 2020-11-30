@@ -14,6 +14,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import JFG_Controller.MysqlConnect;
+import JFG_Models.ModelEmpleado;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+
+
 
 /**
  * FXML Controller class
@@ -21,7 +33,14 @@ import javafx.scene.image.ImageView;
  * @author jhoda
  */
 public class JFG_LogginFXMLController implements Initializable {
-
+    
+    MysqlConnect cn = new MysqlConnect();
+    ModelEmpleado Emp;
+    Connection con;
+    Statement stmt;
+    ResultSet rs;
+    
+    
     private Label theLabel;
     @FXML
     private TextField TxtUsuario;
@@ -41,8 +60,29 @@ public class JFG_LogginFXMLController implements Initializable {
     }    
 
     @FXML
-    private void handeButton(ActionEvent event) {
-        
+    private void BtnIngresarAction(ActionEvent event) {
+        con = cn.Conexion();
+        try {
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("select * from jfg_empleados where emp_usuario = '"+TxtUsuario.getText()+"'");
+            
+            Emp.setEmp_Usuario(rs.getString("Emp_Usuario"));
+            Emp.setPer_Id(Integer.parseInt(rs.getString("Per_Id")));
+            Emp.setCar_Id(Integer.parseInt(rs.getString("Car_Id")));
+            Emp.setEmp_FechaContrato(rs.getString("Emp_FechaContrato"));
+            Emp.setEmp_FechaSalida(rs.getString("Emp_FechaSalida"));
+            Emp.setCont_Id(rs.getString("Cont_Id"));
+            
+            rs = stmt.executeQuery("select * from jfg_contraseñas where Cont_Id = '"+Emp.getCont_Id()+"'");
+            
+            Emp.setCont_Contraseña(rs.getString(rs.getString("Cont_Contraseña")));
+            
+            JOptionPane.showMessageDialog(null, "Sesión iniciada.");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se encontró su usuario.");
+            Logger.getLogger(JFG_LogginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
