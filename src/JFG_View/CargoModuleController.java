@@ -137,8 +137,14 @@ public class CargoModuleController implements Initializable {
 
     @FXML
     private void bt_registrarAction(ActionEvent event) {
-
-        try {
+        if(txt_nombre.getText().length() == 0 && txt_salario.getText().length() == 0){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debe llenar todos los campos");
+            alert.showAndWait();
+        }else{
+            try {
             stmt = con.createStatement();
             stmt.executeUpdate("insert into jfg_cargo values(null,'" + txt_nombre.getText() + "'," + txt_salario.getText() + ")");
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
@@ -148,6 +154,7 @@ public class CargoModuleController implements Initializable {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
         Listar();
+        }
     }
 
     @FXML
