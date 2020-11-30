@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class JFG_Loggin extends Application{
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("CargoModule.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("TipoServicioModule.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Hello World");      
         stage.setScene(scene);
