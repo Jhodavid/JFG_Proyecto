@@ -30,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -53,17 +54,17 @@ public class TipoServicioModuleController implements Initializable {
     @FXML
     private TextField txt_nombre;
     @FXML
-    private Button bt_buscar;
-    @FXML
     private Button bt_registrar;
     @FXML
-    private TableColumn<?, ?> tb_id;
+    private TableColumn<ModelTservicio, Integer> tb_id;
     @FXML
-    private TableColumn<?, ?> tb_nombre;
+    private TableColumn<ModelTservicio, String> tb_nombre;
     @FXML
     private Button bt_eliminar;
     @FXML
-    private TableView<?> Tb_TipoServicio;
+    private TableView<ModelTservicio> Tb_TipoServicio;
+    @FXML
+    private Button bt_Modificar;
 
     public void Listar(){
         
@@ -101,7 +102,16 @@ public class TipoServicioModuleController implements Initializable {
 
     @FXML
     private void RegistrarServicioAction(ActionEvent event) {
-         
+          try {
+            con = DriverManager.getConnection(url, usuario, clave);
+            stmt = con.createStatement();
+            stmt.executeUpdate("insert into jfg_tiposervicio values(null,'" + txt_nombre.getText() + "')");
+            JOptionPane.showMessageDialog(null, "Registro Exitoso");
+            txt_nombre.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Listar();
     }
 
     @FXML
@@ -111,7 +121,7 @@ public class TipoServicioModuleController implements Initializable {
             return;
         }
         txt_id.setText(tb_id.getCellData(index).toString());
-        txt_nombre.setText(tb_nombre.getCellData(index).toString());
+        txt_nombre.setText(tb_nombre.getCellData(index));
        
     }
     

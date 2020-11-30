@@ -88,6 +88,7 @@ public class EmpleadoModuleController implements Initializable {
 
     @FXML
     private void RegistrarEmpleadoAction(ActionEvent event) {
+      /*  
         try {
             con = cn.Conexion();
             stmt = con.createStatement();
@@ -101,7 +102,10 @@ public class EmpleadoModuleController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+   
         Listar();
+*/
     }
-    
+ 
 }
