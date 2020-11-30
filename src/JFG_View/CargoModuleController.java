@@ -27,6 +27,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -105,12 +107,12 @@ public class CargoModuleController implements Initializable {
 
         CargoTable.setItems(cargoList);
     }
-    
-    public void Nuevo(){
-            txt_id.setText("");
-            txt_nombre.setText("");
-            txt_salario.setText("");
-            index = -1;
+
+    public void Nuevo() {
+        txt_id.setText("");
+        txt_nombre.setText("");
+        txt_salario.setText("");
+        index = -1;
     }
 
     //Metodo para objeto seleccionado
@@ -137,24 +139,44 @@ public class CargoModuleController implements Initializable {
 
     @FXML
     private void bt_registrarAction(ActionEvent event) {
-        if(txt_nombre.getText().length() == 0 && txt_salario.getText().length() == 0){
+
+        String nombre = txt_salario.getText();
+        Pattern pat = Pattern.compile("[0-9]");
+        Matcher mat = pat.matcher(nombre);
+
+        if (mat.find()) {
+            if (txt_nombre.getText().length() == 0 && txt_salario.getText().length() == 0) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Debe llenar todos los campos");
+                alert.showAndWait();
+            } else {
+                try {
+                    stmt = con.createStatement();
+                    stmt.executeUpdate("insert into jfg_cargo values(null,'" + txt_nombre.getText() + "'," + txt_salario.getText() + ")");
+                    JOptionPane.showMessageDialog(null, "Registro Exitoso");
+                    Nuevo();
+                    index = -1;
+                } catch (SQLException ex) {
+                    Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+                    
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Error");
+                    alert.setContentText("Debe digitar un valor numericos en salario");
+                    alert.showAndWait();
+                }
+                Listar();
+            }
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setTitle("Error");
-            alert.setContentText("Debe llenar todos los campos");
+            alert.setContentText("Debe digitar un valor numericos en salario");
             alert.showAndWait();
-        }else{
-            try {
-            stmt = con.createStatement();
-            stmt.executeUpdate("insert into jfg_cargo values(null,'" + txt_nombre.getText() + "'," + txt_salario.getText() + ")");
-            JOptionPane.showMessageDialog(null, "Registro Exitoso");
-            Nuevo();
-            index = -1;
-        } catch (SQLException ex) {
-            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Listar();
-        }
+
     }
 
     @FXML
@@ -169,20 +191,20 @@ public class CargoModuleController implements Initializable {
         } else {
             try {
                 stmt = con.createStatement();
-                stmt.executeUpdate("update jfg_cargo set car_id = "+txt_id.getText()+","+"car_cargo = '"+
-                        txt_nombre.getText()+"',car_salario = "+txt_salario.getText()+" where car_id = "+txt_id.getText());
+                stmt.executeUpdate("update jfg_cargo set car_id = " + txt_id.getText() + "," + "car_cargo = '"
+                        + txt_nombre.getText() + "',car_salario = " + txt_salario.getText() + " where car_id = " + txt_id.getText());
                 Nuevo();
                 Listar();
                 index = -1;
             } catch (SQLException ex) {
-            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
 
     @FXML
     private void Deleted(ActionEvent event) {
-        
+
         if (index == -1) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -192,12 +214,12 @@ public class CargoModuleController implements Initializable {
         } else {
             try {
                 stmt = con.createStatement();
-                stmt.executeUpdate("delete from jfg_cargo where car_id = "+txt_id.getText());
+                stmt.executeUpdate("delete from jfg_cargo where car_id = " + txt_id.getText());
                 Nuevo();
                 Listar();
                 index = -1;
             } catch (SQLException ex) {
-            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -206,7 +228,5 @@ public class CargoModuleController implements Initializable {
     private void bt_nuevoAction(ActionEvent event) {
         Nuevo();
     }
-    
-    
 
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.EmpleadoModuleController">
+<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.EmpleadoModuleController">
    <children>
       <ImageView fitHeight="702.0" fitWidth="744.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,7 +25,7 @@
             <Font name="System Bold" size="14.0" />
          </font></Label>
       <TextField fx:id="txt_dni" layoutX="107.0" layoutY="147.0" prefHeight="25.0" prefWidth="150.0" />
-      <Button fx:id="bt_buscar" layoutX="275.0" layoutY="95.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
+      <Button fx:id="bt_buscar" layoutX="275.0" layoutY="95.0" mnemonicParsing="false" onAction="#Buscar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
       <Label layoutX="24.0" layoutY="95.0" text="ID:">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -71,8 +71,8 @@
       <DatePicker fx:id="date_fechafin" layoutX="574.0" layoutY="153.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField fx:id="txt_usuario" layoutX="575.0" layoutY="194.0" />
       <TextField fx:id="txt_contraseña" layoutX="574.0" layoutY="239.0" />
-      <Button fx:id="bt_registrar" layoutX="309.0" layoutY="376.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="178.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar Empleado" />
-      <TableView layoutX="19.0" layoutY="423.0" opacity="0.9" prefHeight="272.0" prefWidth="716.0">
+      <Button fx:id="bt_registrar" layoutX="268.0" layoutY="371.0" mnemonicParsing="false" onAction="#Registrar" prefHeight="35.0" prefWidth="178.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar Empleado" />
+      <TableView fx:id="tablaEmpleado" layoutX="19.0" layoutY="423.0" opacity="0.9" prefHeight="272.0" prefWidth="716.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="51.0" text="ID" />
           <TableColumn fx:id="tb_dni" prefWidth="99.0" text="DNI" />
@@ -88,7 +88,7 @@
             <Font name="System Bold" size="14.0" />
          </font></Label>
       <ComboBox fx:id="cbx_estado" layoutX="575.0" layoutY="289.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
-      <Button layoutX="268.0" layoutY="326.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
+      <Button layoutX="268.0" layoutY="326.0" mnemonicParsing="false" onAction="#Actualizar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
       <Separator layoutX="366.0" layoutY="86.0" orientation="VERTICAL" prefHeight="228.0" prefWidth="12.0" />
    </children>
 </AnchorPane>
