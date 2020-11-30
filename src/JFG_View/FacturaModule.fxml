@@ -7,48 +7,97 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="632.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.FacturaModuleController">
+<AnchorPane id="AnchorPane" prefHeight="632.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.FacturaModuleController">
    <children>
-      <Label layoutX="29.0" layoutY="32.0" text="ID" />
-      <TextField fx:id="txt_idcli" layoutX="89.0" layoutY="28.0" promptText="Ingrese ID cliente" />
-      <Label layoutX="19.0" layoutY="72.0" text="Nombre" />
-      <TextField fx:id="txt_nombrecli" layoutX="89.0" layoutY="68.0" promptText="Ingrese Nombre cliente" />
-      <Separator layoutX="35.0" layoutY="121.0" prefWidth="200.0" />
-      <Label layoutX="35.0" layoutY="155.0" text="ID" />
-      <Label layoutX="25.0" layoutY="192.0" text="Nombre" />
-      <TextField fx:id="txt_idemp" layoutX="90.0" layoutY="151.0" promptText="Ingrese ID empleado" />
-      <TextField fx:id="txt_nombreemp" layoutX="89.0" layoutY="188.0" promptText="Ingrese Nombre empleado" />
-      <Separator layoutX="274.0" layoutY="24.0" orientation="VERTICAL" prefHeight="305.0" prefWidth="12.0" />
-      <Label layoutX="300.0" layoutY="32.0" text="ID" />
-      <Label layoutX="290.0" layoutY="72.0" text="Nombre" />
-      <TextField fx:id="txt_idpro" layoutX="384.0" layoutY="28.0" promptText="Ingrese ID producto" />
-      <TextField fx:id="txt_nombrepro" layoutX="384.0" layoutY="68.0" promptText="Ingrese Nombre producto" />
-      <Separator layoutX="343.0" layoutY="167.0" prefWidth="200.0" />
-      <Label layoutX="297.0" layoutY="184.0" text="Fecha" />
-      <DatePicker fx:id="dt_fecha" layoutX="384.0" layoutY="180.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label layoutX="290.0" layoutY="214.0" text="Departamento" />
-      <TextField fx:id="txt_departamento" layoutX="384.0" layoutY="210.0" />
-      <Label layoutX="292.0" layoutY="243.0" text="Municipio" />
-      <TextField fx:id="txt_muncipio" layoutX="384.0" layoutY="239.0" />
-      <Label layoutX="290.0" layoutY="272.0" text="Direccion" />
-      <TextField fx:id="txt_direccion" layoutX="384.0" layoutY="268.0" />
-      <Label layoutX="291.0" layoutY="113.0" text="Cantidad" />
-      <TextField fx:id="txt_cantidad" layoutX="384.0" layoutY="109.0" />
-      <Button fx:id="bt_agregarproducto" layoutX="584.0" layoutY="28.0" mnemonicParsing="false" text="Agregar" />
-      <Button fx:id="bt_registrarcompra" layoutX="219.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Registrar Compra" />
-      <Separator layoutX="19.0" layoutY="390.0" prefHeight="3.0" prefWidth="609.0" />
-      <TableView layoutX="115.0" layoutY="408.0" prefHeight="200.0" prefWidth="393.0">
+      <ImageView fitHeight="632.0" fitWidth="659.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/Fondo%20Factura.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="33.0" layoutY="105.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_idcli" layoutX="105.0" layoutY="97.0" prefHeight="25.0" prefWidth="175.0" promptText="Ingrese ID cliente" />
+      <Label layoutX="28.0" layoutY="145.0" text="Nombre:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_nombrecli" layoutX="105.0" layoutY="141.0" prefHeight="25.0" prefWidth="175.0" promptText="Ingrese Nombre cliente" />
+      <Separator layoutX="33.0" layoutY="195.0" prefHeight="3.0" prefWidth="291.0" />
+      <Label layoutX="358.0" layoutY="105.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="357.0" layoutY="146.0" text="Nombre:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_idemp" layoutX="429.0" layoutY="97.0" prefHeight="25.0" prefWidth="169.0" promptText="Ingrese ID empleado" />
+      <TextField fx:id="txt_nombreemp" layoutX="429.0" layoutY="141.0" prefHeight="25.0" prefWidth="169.0" promptText="Ingrese Nombre empleado" />
+      <Separator layoutX="344.0" layoutY="91.0" orientation="VERTICAL" prefHeight="245.0" prefWidth="12.0" />
+      <Label layoutX="19.0" layoutY="232.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="13.0" layoutY="277.0" text="Nombre:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_idpro" layoutX="82.0" layoutY="230.0" promptText="Ingrese ID producto" />
+      <TextField fx:id="txt_nombrepro" layoutX="82.0" layoutY="270.0" prefHeight="25.0" prefWidth="162.0" promptText="Ingrese Nombre producto" />
+      <Separator layoutX="371.0" layoutY="193.0" prefHeight="3.0" prefWidth="248.0" />
+      <Label layoutX="361.0" layoutY="221.0" text="Fecha:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <DatePicker fx:id="dt_fecha" layoutX="475.0" layoutY="218.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="360.0" layoutY="251.0" text="Departamento:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_departamento" layoutX="475.0" layoutY="248.0" />
+      <Label layoutX="359.0" layoutY="282.0" text="Municipio:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_muncipio" layoutX="475.0" layoutY="277.0" />
+      <Label layoutX="358.0" layoutY="310.0" text="Direccion:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_direccion" layoutX="475.0" layoutY="306.0" />
+      <Label layoutX="13.0" layoutY="314.0" text="Cantidad:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_cantidad" layoutX="82.0" layoutY="311.0" prefHeight="25.0" prefWidth="162.0" />
+      <Button fx:id="bt_agregarproducto" layoutX="244.0" layoutY="224.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Agregar" />
+      <Button fx:id="bt_registrarcompra" layoutX="260.0" layoutY="342.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="162.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar Compra" />
+      <TableView layoutX="14.0" layoutY="383.0" opacity="0.9" prefHeight="238.0" prefWidth="528.0">
         <columns>
           <TableColumn fx:id="tb_idpro" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="tb_nombrepro" prefWidth="222.0" text="Nombre" />
-            <TableColumn fx:id="tb_cantidad" prefWidth="95.0" text="Cantidad" />
+          <TableColumn fx:id="tb_nombrepro" prefWidth="285.0" text="Nombre" />
+            <TableColumn fx:id="tb_cantidad" prefWidth="167.0" text="Cantidad" />
         </columns>
       </TableView>
-      <Button fx:id="bt_eliminarpro" layoutX="555.0" layoutY="483.0" mnemonicParsing="false" text="Eliminar" />
-      <Label layoutX="106.0" layoutY="6.0" prefHeight="17.0" prefWidth="95.0" text="Ingresar Cliente" />
-      <Label layoutX="104.0" layoutY="125.0" text="Ingresar Empleado" />
-      <Label layoutX="411.0" layoutY="6.0" text="Ingresar Producto" />
+      <Button fx:id="bt_eliminarpro" layoutX="548.0" layoutY="485.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
+      <Label layoutX="141.0" layoutY="71.0" prefHeight="20.0" prefWidth="110.0" text="Ingresar Cliente">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="453.0" layoutY="72.0" text="Ingresar Empleado">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="119.0" layoutY="204.0" text="Ingresar Producto">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>

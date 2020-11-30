@@ -2,28 +2,39 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="JFG_View.ProveedorModuleController">
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.ProveedorModuleController">
    <children>
-      <Label layoutX="295.0" layoutY="27.0" text="ID" />
-      <TextField fx:id="txt_id" layoutX="226.0" layoutY="59.0" promptText="Ingrese ID provedor" />
-      <Label layoutX="278.0" layoutY="107.0" text="Nombre" />
-      <TextField fx:id="txt_nombre" layoutX="226.0" layoutY="140.0" promptText="Ingrese Nombre Provedor" />
-      <Separator layoutX="20.0" layoutY="244.0" prefHeight="17.0" prefWidth="568.0" />
-      <Button fx:id="bt_buscar" layoutX="435.0" layoutY="59.0" mnemonicParsing="false" text="Buscar" />
-      <Button fx:id="bt_registrar" layoutX="269.0" layoutY="200.0" mnemonicParsing="false" text="Registrar" />
-      <TableView layoutX="200.0" layoutY="284.0" prefHeight="200.0" prefWidth="200.0">
+      <ImageView fitHeight="524.0" fitWidth="600.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/Resgistro%20Proveedores.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="39.0" layoutY="92.0" prefHeight="17.0" prefWidth="77.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_id" layoutX="120.0" layoutY="90.0" promptText="Ingrese ID provedor" />
+      <Label layoutX="39.0" layoutY="155.0" text="Nombre:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_nombre" layoutX="120.0" layoutY="153.0" promptText="Ingrese Nombre Provedor" />
+      <Button fx:id="bt_buscar" layoutX="296.0" layoutY="85.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
+      <Button fx:id="bt_registrar" layoutX="98.0" layoutY="225.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
+      <TableView layoutX="14.0" layoutY="285.0" opacity="0.8" prefHeight="222.0" prefWidth="466.0">
         <columns>
-          <TableColumn fx:id="tb_id" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="tb_nombre" prefWidth="124.0" text="Nombre" />
+          <TableColumn fx:id="tb_id" prefWidth="143.0" text="ID" />
+          <TableColumn fx:id="tb_nombre" prefWidth="322.0" text="Nombre" />
         </columns>
       </TableView>
-      <Button fx:id="bt_eliminar" layoutX="435.0" layoutY="372.0" mnemonicParsing="false" text="Eliminar" />
+      <Button fx:id="bt_eliminar" layoutX="296.0" layoutY="225.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
    </children>
 </AnchorPane>

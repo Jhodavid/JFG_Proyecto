@@ -8,47 +8,88 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.EmpleadoModuleController">
    <children>
-      <Label layoutX="14.0" layoutY="100.0" text="DNI" />
-      <TextField fx:id="txt_dni" layoutX="158.0" layoutY="96.0" prefHeight="25.0" prefWidth="150.0" />
-      <Button fx:id="bt_buscar" layoutX="325.0" layoutY="34.0" mnemonicParsing="false" text="Buscar" />
-      <Label layoutX="18.0" layoutY="38.0" text="ID" />
-      <Label layoutX="15.0" layoutY="141.0" text="Nombres" />
-      <Label layoutX="15.0" layoutY="186.0" text="Apellidos" />
-      <Label layoutX="17.0" layoutY="236.0" text="Correo" />
-      <Label layoutX="14.0" layoutY="282.0" text="Cargo" />
-      <Label layoutX="423.0" layoutY="38.0" text="Fecha de inicio contrato" />
-      <Label layoutX="423.0" layoutY="92.0" text="Fecha final contrato" />
-      <Label layoutX="421.0" layoutY="141.0" text="Usuario" />
-      <Label layoutX="421.0" layoutY="186.0" text="Contraseña" />
-      <TextField fx:id="txt_nombres" layoutX="158.0" layoutY="137.0" />
-      <TextField fx:id="txt_apellidos" layoutX="157.0" layoutY="182.0" />
-      <TextField fx:id="txt_correo" layoutX="158.0" layoutY="232.0" />
-      <TextField fx:id="txt_id" layoutX="157.0" layoutY="34.0" promptText="Digite ID" />
-      <ComboBox fx:id="cbx_cargo" layoutX="157.0" layoutY="278.0" prefWidth="150.0" />
-      <DatePicker fx:id="date_fechainicio" layoutX="568.0" layoutY="34.0" prefHeight="25.0" prefWidth="150.0" />
-      <DatePicker fx:id="date_fechafin" layoutX="568.0" layoutY="96.0" prefHeight="25.0" prefWidth="150.0" />
-      <TextField fx:id="txt_usuario" layoutX="569.0" layoutY="137.0" />
-      <TextField fx:id="txt_contraseña" layoutX="568.0" layoutY="182.0" />
-      <Button fx:id="bt_registrar" layoutX="287.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Registrar Empleado" />
-      <TableView layoutX="35.0" layoutY="450.0" prefHeight="200.0" prefWidth="575.0">
+      <ImageView fitHeight="702.0" fitWidth="744.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/Registro%20de%20empleados.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="20.0" layoutY="157.0" text="DNI:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_dni" layoutX="107.0" layoutY="147.0" prefHeight="25.0" prefWidth="150.0" />
+      <Button fx:id="bt_buscar" layoutX="275.0" layoutY="95.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
+      <Label layoutX="24.0" layoutY="95.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="21.0" layoutY="198.0" text="Nombres:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="21.0" layoutY="243.0" text="Apellidos:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="23.0" layoutY="293.0" text="Correo:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="339.0" text="Cargo:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="406.0" layoutY="98.0" text="Fecha de inicio contrato:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="406.0" layoutY="152.0" text="Fecha final contrato:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="404.0" layoutY="201.0" text="Usuario:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="404.0" layoutY="246.0" text="Contraseña:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <TextField fx:id="txt_nombres" layoutX="107.0" layoutY="188.0" />
+      <TextField fx:id="txt_apellidos" layoutX="106.0" layoutY="233.0" />
+      <TextField fx:id="txt_correo" layoutX="107.0" layoutY="283.0" />
+      <TextField fx:id="txt_id" layoutX="108.0" layoutY="98.0" promptText="Digite ID" />
+      <ComboBox fx:id="cbx_cargo" layoutX="106.0" layoutY="329.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
+      <DatePicker fx:id="date_fechainicio" layoutX="574.0" layoutY="91.0" prefHeight="25.0" prefWidth="150.0" />
+      <DatePicker fx:id="date_fechafin" layoutX="574.0" layoutY="153.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="txt_usuario" layoutX="575.0" layoutY="194.0" />
+      <TextField fx:id="txt_contraseña" layoutX="574.0" layoutY="239.0" />
+      <Button fx:id="bt_registrar" layoutX="309.0" layoutY="376.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="178.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar Empleado" />
+      <TableView layoutX="19.0" layoutY="423.0" prefHeight="272.0" prefWidth="716.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="51.0" text="ID" />
           <TableColumn fx:id="tb_dni" prefWidth="99.0" text="DNI" />
-            <TableColumn fx:id="tb_nombres" prefWidth="75.0" text="Nombres" />
-            <TableColumn fx:id="tb_apellidos" prefWidth="75.0" text="Apellidos" />
-            <TableColumn fx:id="tb_correo" prefWidth="141.0" text="Correo" />
-            <TableColumn fx:id="tb_cargo" minWidth="9.0" prefWidth="69.0" text="Cargo" />
-            <TableColumn fx:id="tb_estado" prefWidth="75.0" text="Estado" />
+            <TableColumn fx:id="tb_nombres" prefWidth="112.0" text="Nombres" />
+            <TableColumn fx:id="tb_apellidos" prefWidth="111.0" text="Apellidos" />
+            <TableColumn fx:id="tb_correo" prefWidth="150.0" text="Correo" />
+            <TableColumn fx:id="tb_cargo" minWidth="9.0" prefWidth="140.0" text="Cargo" />
+            <TableColumn fx:id="tb_estado" minWidth="7.0" prefWidth="52.0" text="Estado" />
         </columns>
       </TableView>
-      <Separator layoutX="27.0" layoutY="396.0" prefHeight="6.0" prefWidth="688.0" />
-      <Label layoutX="421.0" layoutY="236.0" text="Estado" />
-      <ComboBox fx:id="cbx_estado" layoutX="569.0" layoutY="232.0" prefWidth="150.0" />
-      <Button layoutX="325.0" layoutY="278.0" mnemonicParsing="false" text="Modificar" />
-      <Separator layoutX="400.0" layoutY="21.0" orientation="VERTICAL" prefHeight="304.0" prefWidth="12.0" />
+      <Separator layoutX="33.0" layoutY="411.0" prefHeight="6.0" prefWidth="688.0" />
+      <Label layoutX="404.0" layoutY="296.0" text="Estado:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <ComboBox fx:id="cbx_estado" layoutX="575.0" layoutY="289.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
+      <Button layoutX="268.0" layoutY="326.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
+      <Separator layoutX="366.0" layoutY="86.0" orientation="VERTICAL" prefHeight="228.0" prefWidth="12.0" />
    </children>
 </AnchorPane>
