@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.TipoClienteModuleController">
+<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.TipoClienteModuleController">
    <children>
       <ImageView fitHeight="639.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -37,9 +37,9 @@
       <TextField fx:id="txt_tipocliente" layoutX="145.0" layoutY="166.0" promptText="Ingrese nombre TC" style="-fx-border-color: grey;" />
       <TextField fx:id="txt_descuento" layoutX="145.0" layoutY="263.0" promptText="Ingrese el descuento (%)" style="-fx-border-color: grey;" />
       <TextField fx:id="txt_monto" layoutX="145.0" layoutY="212.0" promptText="Ingrese el monto (1,2,3)" style="-fx-border-color: grey;" />
-      <Button fx:id="bt_buscar" layoutX="430.0" layoutY="109.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
-      <Button fx:id="bt_actualizar" layoutX="419.0" layoutY="258.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Actualizar" />
-      <TableView layoutX="26.0" layoutY="339.0" opacity="0.8" prefHeight="283.0" prefWidth="548.0">
+      <Button fx:id="bt_Modifcar" layoutX="420.0" layoutY="301.0" mnemonicParsing="false" onAction="#Btn_Modificar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
+      <Button fx:id="bt_Nuevo" layoutX="285.0" layoutY="301.0" mnemonicParsing="false" onAction="#Btn_Nuevo" prefHeight="35.0" prefWidth="116.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Nuevo" />
+      <TableView fx:id="Tb_TipoCliente" layoutX="26.0" layoutY="339.0" onMouseClicked="#MouseClicked_TCliente" opacity="0.8" prefHeight="283.0" prefWidth="548.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="101.0" text="ID" />
           <TableColumn fx:id="tb_tipocliente" prefWidth="175.0" text="Tipo Cliente" />
@@ -47,6 +47,7 @@
             <TableColumn fx:id="tb_descuento" prefWidth="93.0" text="Descuento" />
         </columns>
       </TableView>
-      <Button fx:id="bt_eliminar" layoutX="425.0" layoutY="178.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
+      <Button fx:id="bt_eliminar" layoutX="164.0" layoutY="301.0" mnemonicParsing="false" onAction="#Btn_Eliminar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
+      <Button fx:id="bt_registrar" layoutX="309.0" layoutY="110.0" mnemonicParsing="false" onAction="#Btn_registrar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
    </children>
 </AnchorPane>
