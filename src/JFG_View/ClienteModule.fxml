@@ -46,7 +46,7 @@
          </font></Label>
       <Button fx:id="bt_buscar" layoutX="427.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
       <Button fx:id="bt_registrar" layoutX="270.0" layoutY="295.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
-      <TableView layoutX="14.0" layoutY="363.0" prefHeight="266.0" prefWidth="564.0">
+      <TableView layoutX="14.0" layoutY="363.0" opacity="0.9" prefHeight="266.0" prefWidth="564.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="39.0" text="ID" />
           <TableColumn fx:id="tb_dni" prefWidth="93.0" text="DNI" />

@@ -72,7 +72,7 @@
       <TextField fx:id="txt_usuario" layoutX="575.0" layoutY="194.0" />
       <TextField fx:id="txt_contraseña" layoutX="574.0" layoutY="239.0" />
       <Button fx:id="bt_registrar" layoutX="309.0" layoutY="376.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="178.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar Empleado" />
-      <TableView layoutX="19.0" layoutY="423.0" prefHeight="272.0" prefWidth="716.0">
+      <TableView layoutX="19.0" layoutY="423.0" opacity="0.9" prefHeight="272.0" prefWidth="716.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="51.0" text="ID" />
           <TableColumn fx:id="tb_dni" prefWidth="99.0" text="DNI" />
