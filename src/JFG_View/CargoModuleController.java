@@ -29,6 +29,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.JOptionPane;
 
@@ -47,9 +48,9 @@ public class CargoModuleController implements Initializable {
     Statement stmt;
     ResultSet rs;
     PreparedStatement pst = null;
-    
+
     int index = -1;
-    
+
     @FXML
     private TextField txt_id;
     @FXML
@@ -68,59 +69,58 @@ public class CargoModuleController implements Initializable {
     private TextField txt_salario;
     @FXML
     private Button bt_modificar;
-    
+
     //--
     //Metodo para listar en la tabla
-    public void Listar(){
-        
+    public void Listar() {
+
         ObservableList<ModelCargo> cargoList = FXCollections.observableArrayList();
-        
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
             rs = stmt.executeQuery("select * from jfg_cargo");
-            
-            while(rs.next()){
-                cargoList.add(new ModelCargo(Integer.parseInt(rs.getString("Car_Id")),rs.getString("Car_Cargo"),Double.parseDouble(rs.getString("Car_Salario"))));
+
+            while (rs.next()) {
+                cargoList.add(new ModelCargo(Integer.parseInt(rs.getString("Car_Id")), rs.getString("Car_Cargo"), Double.parseDouble(rs.getString("Car_Salario"))));
             }
-           
+
         } catch (SQLException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-            tb_id.setCellValueFactory(new PropertyValueFactory<>("Car_Id"));
-            tb_nombre.setCellValueFactory(new PropertyValueFactory<>("Car_Cargo"));
-            tb_salario.setCellValueFactory(new PropertyValueFactory<>("Car_Salario"));
-            
-            CargoTable.setItems(cargoList);
+
+        tb_id.setCellValueFactory(new PropertyValueFactory<>("Car_Id"));
+        tb_nombre.setCellValueFactory(new PropertyValueFactory<>("Car_Cargo"));
+        tb_salario.setCellValueFactory(new PropertyValueFactory<>("Car_Salario"));
+
+        CargoTable.setItems(cargoList);
     }
-    
+
     //Metodo para objeto seleccionado
     @FXML
     private void getSelectedMouse(javafx.scene.input.MouseEvent event) {
         index = CargoTable.getSelectionModel().getSelectedIndex();
-        if(index <= -1){
+        if (index <= -1) {
             return;
         }
         txt_id.setText(tb_id.getCellData(index).toString());
         txt_nombre.setText(tb_nombre.getCellData(index).toString());
         txt_salario.setText(tb_salario.getCellData(index).toString());
-    }    
-    
-    //--
+    }
 
+    //--
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         Listar();
     }
 
@@ -139,10 +139,42 @@ public class CargoModuleController implements Initializable {
         }
         Listar();
     }
-    
+
     @FXML
     private void Edit(ActionEvent event) {
-        
+
+        if (index == -1) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Debe seleccionar un cargo");
+            alert.showAndWait();
+        } else {
+            try {
+                con = DriverManager.getConnection(url, usuario, clave);
+                String sql = "update JFG_Cargo "
+                        + "set"
+                        + "'Car_Id' = ?, "
+                        + "'Car_Cargo' = ?, "
+                        + "'Car_Salario' = ? "
+                        + "where 'Car_Id' = ?;";
+                
+                sql = "UPDATE jfg_cargo SET Car_Id=?,Car_Cargo=?,Car_Salario=? WHERE "+txt_id.getText();
+                
+                pst = con.prepareStatement(sql);
+
+                pst.setString(1, txt_id.getText());
+                pst.setString(2, txt_nombre.getText());
+                pst.setString(3, txt_salario.getText());
+
+                pst.executeUpdate();
+
+                Listar();
+            } catch (Exception e) {
+            }
+        }
+
+        /*
         try {
             String sql = "update JFG_Cargo "
                     +"set"
@@ -161,10 +193,7 @@ public class CargoModuleController implements Initializable {
 
             Listar();
         } catch (Exception e) {
-        }
+        }*/
     }
 
-    
-
-    
 }
