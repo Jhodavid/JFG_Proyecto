@@ -13,14 +13,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.PagoServicioController">
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.PagoServicioController">
    <children>
       <ImageView fitHeight="513.0" fitWidth="753.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img/Pago%20Servicio.png" />
          </image>
       </ImageView>
-      <Button fx:id="BtEliminarServicio" layoutX="588.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
+      <Button fx:id="BtEliminarServicio" layoutX="588.0" layoutY="198.0" mnemonicParsing="false" onAction="#btn_eliminar" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
       <Label layoutX="57.0" layoutY="65.0" text="ID :">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -41,19 +41,19 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="BtLimpliarServicio" layoutX="588.0" layoutY="70.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Limpiar" />
-      <Button fx:id="BtModificarServicio" layoutX="391.0" layoutY="198.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
-      <Button fx:id="BtRegistrarServicio" layoutX="391.0" layoutY="73.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
+      <Button fx:id="BtLimpliarServicio" layoutX="588.0" layoutY="70.0" mnemonicParsing="false" onAction="#btn_limpiar" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Limpiar" />
+      <Button fx:id="BtModificarServicio" layoutX="391.0" layoutY="198.0" mnemonicParsing="false" onAction="#btn_modificar" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
+      <Button fx:id="BtRegistrarServicio" layoutX="391.0" layoutY="73.0" mnemonicParsing="false" onAction="#btn_registrar" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
       <TextField fx:id="TxtIdServicio" layoutX="173.0" layoutY="63.0" />
       <TextField fx:id="TxtPrecioServicio" layoutX="173.0" layoutY="161.0" />
-      <ComboBox fx:id="CmbTipoServicio" layoutX="172.0" layoutY="111.0" prefWidth="150.0" />
+      <ComboBox fx:id="CmbTipoServicio" layoutX="172.0" layoutY="111.0" prefWidth="150.0" promptText="Seleccionar" />
       <DatePicker fx:id="TxtFechaServicio" layoutX="173.0" layoutY="213.0" prefHeight="25.0" prefWidth="150.0" />
-      <TableView fx:id="TbPagoServicio" layoutX="14.0" layoutY="273.0" opacity="0.8" prefHeight="231.0" prefWidth="727.0">
+      <TableView fx:id="TbPagoServicio" layoutX="14.0" layoutY="273.0" onMouseClicked="#MouseClicked" opacity="0.8" prefHeight="231.0" prefWidth="727.0">
         <columns>
-          <TableColumn prefWidth="98.0" text="ID" />
-          <TableColumn prefWidth="191.0" text="Tipo Servicio" />
-            <TableColumn prefWidth="232.0" text="Precio" />
-            <TableColumn prefWidth="205.0" text="Fecha" />
+          <TableColumn fx:id="tb_idServicio" prefWidth="98.0" text="ID" />
+          <TableColumn fx:id="tb_TipoServicio" prefWidth="191.0" text="Tipo Servicio" />
+            <TableColumn fx:id="tb_precio" prefWidth="232.0" text="Precio" />
+            <TableColumn fx:id="tb_fecha" prefWidth="205.0" text="Fecha" />
         </columns>
       </TableView>
       <Separator layoutX="33.0" layoutY="254.0" prefHeight="6.0" prefWidth="695.0" />
