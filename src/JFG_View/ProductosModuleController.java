@@ -28,7 +28,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+
 
 /**
  * FXML Controller class
@@ -48,6 +48,7 @@ public class ProductosModuleController implements Initializable {
     String fecha;
     
     int index = -1;
+    
     
     @FXML
     private TextField txt_pronom;
@@ -77,12 +78,13 @@ public class ProductosModuleController implements Initializable {
 
     
     public void Listar() {
-
+        
         ObservableList<ModelProductos> productoList = FXCollections.observableArrayList();
-
+        
         try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
+            
             rs = stmt.executeQuery("SELECT `jfg_productos`.`Prod_Id`, `jfg_productos`.`Prod_Nombre`, `jfg_productos`.`Prod_Descripcion`, `jfg_precio`.`Prec_Precio`\n" +
                                    "FROM `jfg_productos` \n" +
                                    "LEFT JOIN `jfg_precio` ON `jfg_precio`.`Prod_Id` = `jfg_productos`.`Prod_Id`;");
@@ -135,7 +137,7 @@ public class ProductosModuleController implements Initializable {
     }
 
     @FXML
-    private void Seleccionar(MouseEvent event) {
+    private void Seleccionar(javafx.scene.input.MouseEvent event) {
     }
 
     @FXML

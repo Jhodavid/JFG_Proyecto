@@ -13,12 +13,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-
+import javafx.scene.input.MouseEvent;
 import JFG_Controller.JFG_Operations;
 import javafx.event.ActionEvent;
 import JFG_Controller.MysqlConnect;
 import JFG_Models.ModelCargo;
-import java.awt.event.MouseEvent;
+
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -79,7 +79,7 @@ public class CargoModuleController implements Initializable {
     public void Listar() {
 
         ObservableList<ModelCargo> cargoList = FXCollections.observableArrayList();
-
+        
         try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();

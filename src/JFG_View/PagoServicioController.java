@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
@@ -25,25 +26,35 @@ import javafx.scene.control.TextField;
 public class PagoServicioController implements Initializable {
 
     @FXML
-    private TextField TxtIdServicio;
+    private Button BtEliminarSalario;
     @FXML
-    private ComboBox<?> CmbTipoServicio;
+    private Button BtLimpiarSalario;
     @FXML
-    private Label labelprueba2;
+    private Button BtModificarSalario;
     @FXML
-    private Button BtEliminarServicio;
+    private Button BtRegistrarSalario;
     @FXML
-    private Button BtLimpliarServicio;
+    private TextField TxtIdEmpleadoSalario;
     @FXML
-    private Button BtModificarServicio;
+    private TextField TxtMontoSalario;
     @FXML
-    private Button BtRegistrarServicio;
+    private DatePicker TxtFechaSalario;
     @FXML
-    private TextField TxtPrecioServicio;
+    private TableView<?> TbPagoSalario;
     @FXML
-    private DatePicker TxtFechaServicio;
+    private Button BtBuscarSalario;
     @FXML
-    private TableView<?> TbPagoServicio;
+    private Label labelprueba;
+    @FXML
+    private TableColumn<?, ?> ColIdSal;
+    @FXML
+    private TableColumn<?, ?> ColNomSal;
+    @FXML
+    private TableColumn<?, ?> ColCargSal;
+    @FXML
+    private TableColumn<?, ?> ColMontoSal;
+    @FXML
+    private TableColumn<?, ?> ColFechaSal;
 
     
 
@@ -54,6 +65,26 @@ public class PagoServicioController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void Eliminar(ActionEvent event) {
+    }
+
+    @FXML
+    private void Limpiar(ActionEvent event) {
+    }
+
+    @FXML
+    private void Modificar(ActionEvent event) {
+    }
+
+    @FXML
+    private void Pagar(ActionEvent event) {
+    }
+
+    @FXML
+    private void Buscar(ActionEvent event) {
+    }
 
     
 }
