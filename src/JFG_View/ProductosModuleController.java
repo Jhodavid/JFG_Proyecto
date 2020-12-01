@@ -82,6 +82,12 @@ public class ProductosModuleController implements Initializable {
         ObservableList<ModelProductos> productoList = FXCollections.observableArrayList();
         
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
             
@@ -112,10 +118,6 @@ public class ProductosModuleController implements Initializable {
         txt_precio.setText("");
         index = -1;
     }
-    
-    
-    
-    
     
     /**
      * Initializes the controller class.
