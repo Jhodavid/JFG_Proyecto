@@ -7,23 +7,25 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.PagoServicioController">
    <children>
-      <Label layoutX="341.0" layoutY="14.0" text="Salario">
+      <ImageView fitHeight="513.0" fitWidth="753.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/Pago%20Salario.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BtEliminarSalario" layoutX="608.0" layoutY="195.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
+      <Label layoutX="39.0" layoutY="80.0" text="ID :">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="bt_nuevo" layoutX="581.0" layoutY="152.0" mnemonicParsing="false" onAction="#bt_nuevoAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
-      <Label layoutX="39.0" layoutY="64.0" text="ID :">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="39.0" layoutY="129.0" text="Monto :">
+      <Label layoutX="39.0" layoutY="145.0" text="Monto :">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -33,28 +35,29 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="36.0" layoutY="201.0" text="Fecha :">
+      <Label layoutX="36.0" layoutY="217.0" text="Fecha :">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="bt_nuevo1" layoutX="581.0" layoutY="57.0" mnemonicParsing="false" onAction="#bt_nuevoAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Limpiar" />
-      <Button fx:id="bt_nuevo11" layoutX="389.0" layoutY="152.0" mnemonicParsing="false" onAction="#bt_nuevoAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
-      <Button fx:id="bt_nuevo111" layoutX="389.0" layoutY="57.0" mnemonicParsing="false" onAction="#bt_nuevoAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
-      <TextField layoutX="113.0" layoutY="62.0" promptText="Digite ID Empleado" />
-      <TextField layoutX="113.0" layoutY="127.0" />
-      <DatePicker layoutX="113.0" layoutY="199.0" prefHeight="25.0" prefWidth="150.0" />
-      <TableView layoutX="20.0" layoutY="276.0" prefHeight="200.0" prefWidth="697.0">
+      <Button fx:id="BtLimpiarSalario" layoutX="608.0" layoutY="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Limpiar" />
+      <Button fx:id="BtModificarSalario" layoutX="408.0" layoutY="195.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
+      <Button fx:id="BtRegistrarSalario" layoutX="408.0" layoutY="75.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
+      <TextField fx:id="TxtIdEmpleadoSalario" layoutX="108.0" layoutY="78.0" promptText="Digite ID Empleado" />
+      <TextField fx:id="TxtMontoSalario" layoutX="108.0" layoutY="143.0" />
+      <DatePicker fx:id="TxtFechaSalario" layoutX="109.0" layoutY="215.0" prefHeight="25.0" prefWidth="150.0" />
+      <TableView fx:id="TbPagoSalario" layoutX="14.0" layoutY="299.0" opacity="0.8" prefHeight="200.0" prefWidth="730.0">
          <columns>
             <TableColumn prefWidth="75.0" text="ID" />
             <TableColumn prefWidth="174.0" text="Nombre" />
             <TableColumn prefWidth="168.0" text="Cargo" />
-            <TableColumn prefWidth="137.0" text="Monto" />
-            <TableColumn prefWidth="141.0" text="Fecha" />
+            <TableColumn prefWidth="163.0" text="Monto" />
+            <TableColumn prefWidth="149.0" text="Fecha" />
          </columns>
       </TableView>
-      <Separator layoutX="39.0" layoutY="248.0" prefHeight="6.0" prefWidth="672.0" />
-      <Separator layoutX="376.0" layoutY="49.0" orientation="VERTICAL" prefHeight="200.0" />
-      <Button fx:id="bt_nuevo1111" layoutX="266.0" layoutY="57.0" mnemonicParsing="false" onAction="#bt_nuevoAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
+      <Separator layoutX="46.0" layoutY="276.0" prefHeight="6.0" prefWidth="672.0" />
+      <Separator layoutX="389.0" layoutY="52.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Button fx:id="BtBuscarSalario" layoutX="269.0" layoutY="73.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
+      <Label fx:id="labelprueba" layoutX="310.0" layoutY="160.0" text="Label" />
    </children>
 </AnchorPane>

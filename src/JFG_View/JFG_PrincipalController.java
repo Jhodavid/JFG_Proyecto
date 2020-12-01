@@ -110,4 +110,10 @@ public class JFG_PrincipalController implements Initializable {
         IdAnchorPane.getChildren().add(root5);
     }
 
+    @FXML
+    private void PagosAction(ActionEvent event) throws IOException {
+        AnchorPane root6 = FXMLLoader.load(getClass().getResource("PagosModule.fxml"));  
+        IdAnchorPane.getChildren().add(root6);
+    }
+
 }

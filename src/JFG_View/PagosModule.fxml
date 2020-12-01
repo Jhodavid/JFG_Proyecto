@@ -5,17 +5,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="753.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="JFG_View.PagosModuleController">
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.PagosModuleController">
    <children>
       <ImageView fitHeight="673.0" fitWidth="753.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img/Fondo%20Pagos.png" />
          </image>
       </ImageView>
-      <Button fx:id="BtPedidos" layoutX="46.0" layoutY="92.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Pedidos" />
-      <AnchorPane fx:id="IdAnchorPane2" layoutX="13.0" layoutY="148.0" prefHeight="505.0" prefWidth="727.0" />
-      <Button fx:id="BtSalario" layoutX="630.0" layoutY="92.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Salario" />
-      <Button fx:id="BtServicios" layoutX="324.0" layoutY="92.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Servicios" />
+      <Button fx:id="BtPedidos" layoutX="47.0" layoutY="92.0" mnemonicParsing="false" onAction="#PagoPedidosAction" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Pedidos" />
+      <AnchorPane fx:id="IdAnchorPane2" layoutY="148.0" prefHeight="513.0" prefWidth="753.0" />
+      <Button fx:id="BtSalario" layoutX="630.0" layoutY="92.0" mnemonicParsing="false" onAction="#PagoSalariosAction" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Salarios" />
+      <Button fx:id="BtServicios" layoutX="324.0" layoutY="92.0" mnemonicParsing="false" onAction="#PagoServicio" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Servicios" />
    </children>
 </AnchorPane>

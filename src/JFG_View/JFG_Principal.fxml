@@ -52,7 +52,7 @@
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="BtPagos" mnemonicParsing="false" prefHeight="21.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Pagos">
+            <Button fx:id="BtPagos" mnemonicParsing="false" onAction="#PagosAction" prefHeight="21.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Pagos">
                <font>
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
