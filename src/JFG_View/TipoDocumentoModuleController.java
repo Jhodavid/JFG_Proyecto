@@ -102,6 +102,7 @@ public class TipoDocumentoModuleController implements Initializable {
     
     public void Nuevo() {
         txt_tipodocumento.setText("");
+        txt_Id.setText("");
         index = -1;
     }
     

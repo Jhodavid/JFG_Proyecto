@@ -13,36 +13,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="702.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.EmpleadoModuleController">
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.EmpleadoModuleController">
    <children>
-      <ImageView fitHeight="702.0" fitWidth="744.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="673.0" fitWidth="753.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img/Registro%20de%20empleados.png" />
          </image>
       </ImageView>
-      <Label layoutX="20.0" layoutY="157.0" text="DNI:">
+      <Label layoutX="20.0" layoutY="140.0" text="DNI:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_dni" layoutX="107.0" layoutY="147.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="txt_dni" layoutX="108.0" layoutY="130.0" prefHeight="25.0" prefWidth="149.0" />
       <Button fx:id="bt_buscar" layoutX="275.0" layoutY="95.0" mnemonicParsing="false" onAction="#Buscar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
       <Label layoutX="24.0" layoutY="95.0" text="ID:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="21.0" layoutY="198.0" text="Nombres:">
+      <Label layoutX="20.0" layoutY="166.0" text="Nombres:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="21.0" layoutY="243.0" text="Apellidos:">
+      <Label layoutX="20.0" layoutY="206.0" text="Apellidos:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="23.0" layoutY="293.0" text="Correo:">
+      <Label layoutX="23.0" layoutY="242.0" text="Correo:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="20.0" layoutY="339.0" text="Cargo:">
+      <Label layoutX="24.0" layoutY="279.0" text="Cargo:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
@@ -50,29 +50,29 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="406.0" layoutY="152.0" text="Fecha final contrato:">
+      <Label layoutX="404.0" layoutY="133.0" text="Fecha final contrato:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="404.0" layoutY="201.0" text="Usuario:">
+      <Label layoutX="405.0" layoutY="166.0" text="Usuario:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="404.0" layoutY="246.0" text="Contraseña:">
+      <Label layoutX="405.0" layoutY="207.0" text="Contraseña:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_nombres" layoutX="107.0" layoutY="188.0" />
-      <TextField fx:id="txt_apellidos" layoutX="106.0" layoutY="233.0" />
-      <TextField fx:id="txt_correo" layoutX="107.0" layoutY="283.0" />
-      <TextField fx:id="txt_id" layoutX="108.0" layoutY="98.0" promptText="Digite ID" />
-      <ComboBox fx:id="cbx_cargo" layoutX="106.0" layoutY="329.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
+      <TextField fx:id="txt_nombres" layoutX="109.0" layoutY="163.0" />
+      <TextField fx:id="txt_apellidos" layoutX="109.0" layoutY="203.0" />
+      <TextField fx:id="txt_correo" layoutX="109.0" layoutY="239.0" />
+      <TextField fx:id="txt_id" layoutX="108.0" layoutY="98.0" prefHeight="25.0" prefWidth="149.0" promptText="Digite ID" />
+      <ComboBox fx:id="cbx_cargo" layoutX="109.0" layoutY="276.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
       <DatePicker fx:id="date_fechainicio" layoutX="574.0" layoutY="91.0" prefHeight="25.0" prefWidth="150.0" />
-      <DatePicker fx:id="date_fechafin" layoutX="574.0" layoutY="153.0" prefHeight="25.0" prefWidth="150.0" />
-      <TextField fx:id="txt_usuario" layoutX="575.0" layoutY="194.0" />
-      <TextField fx:id="txt_contraseña" layoutX="574.0" layoutY="239.0" />
-      <Button fx:id="bt_registrar" layoutX="268.0" layoutY="371.0" mnemonicParsing="false" onAction="#Registrar" prefHeight="35.0" prefWidth="178.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar Empleado" />
-      <TableView fx:id="tablaEmpleado" layoutX="19.0" layoutY="423.0" opacity="0.9" prefHeight="272.0" prefWidth="716.0">
+      <DatePicker fx:id="date_fechafin" layoutX="574.0" layoutY="130.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="txt_usuario" layoutX="576.0" layoutY="164.0" />
+      <TextField fx:id="txt_contraseña" layoutX="575.0" layoutY="204.0" />
+      <Button fx:id="bt_registrar" layoutX="294.0" layoutY="330.0" mnemonicParsing="false" onAction="#Registrar" prefHeight="35.0" prefWidth="178.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar Empleado" />
+      <TableView fx:id="tablaEmpleado" layoutX="6.0" layoutY="378.0" opacity="0.8" prefHeight="288.0" prefWidth="742.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="51.0" text="ID" />
           <TableColumn fx:id="tb_dni" prefWidth="99.0" text="DNI" />
@@ -80,15 +80,15 @@
             <TableColumn fx:id="tb_apellidos" prefWidth="111.0" text="Apellidos" />
             <TableColumn fx:id="tb_correo" prefWidth="150.0" text="Correo" />
             <TableColumn fx:id="tb_cargo" minWidth="9.0" prefWidth="140.0" text="Cargo" />
-            <TableColumn fx:id="tb_estado" minWidth="7.0" prefWidth="52.0" text="Estado" />
+            <TableColumn fx:id="tb_estado" minWidth="7.0" prefWidth="78.0" text="Estado" />
         </columns>
       </TableView>
-      <Label layoutX="404.0" layoutY="296.0" text="Estado:">
+      <Label layoutX="409.0" layoutY="242.0" text="Estado:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <ComboBox fx:id="cbx_estado" layoutX="575.0" layoutY="289.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
-      <Button layoutX="268.0" layoutY="326.0" mnemonicParsing="false" onAction="#Actualizar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
-      <Separator layoutX="366.0" layoutY="86.0" orientation="VERTICAL" prefHeight="228.0" prefWidth="12.0" />
+      <ComboBox fx:id="cbx_estado" layoutX="576.0" layoutY="238.0" prefWidth="150.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
+      <Button layoutX="266.0" layoutY="272.0" mnemonicParsing="false" onAction="#Actualizar" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
+      <Separator layoutX="377.0" layoutY="87.0" orientation="VERTICAL" prefHeight="228.0" prefWidth="12.0" />
    </children>
 </AnchorPane>

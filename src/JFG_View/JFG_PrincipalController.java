@@ -80,52 +80,71 @@ public class JFG_PrincipalController implements Initializable {
     }
 
     @FXML
-    private void FacturaAction(ActionEvent event) throws IOException {        
-        AnchorPane root1 = FXMLLoader.load(getClass().getResource("FacturaModule.fxml"));  
-        IdAnchorPane.getChildren().add(root1);   
-            
+    private void FacturaAction(ActionEvent event) throws IOException {
+
+        AnchorPane root1 = FXMLLoader.load(getClass().getResource("FacturaModule.fxml"));
+        IdAnchorPane.getChildren().add(root1);
+
     }
 
     @FXML
     private void TipoServiciosAction(ActionEvent event) throws IOException {
-        AnchorPane root2 = FXMLLoader.load(getClass().getResource("TipoServicioModule.fxml"));  
+        AnchorPane root2 = FXMLLoader.load(getClass().getResource("TipoServicioModule.fxml"));
         IdAnchorPane.getChildren().add(root2);
     }
 
     @FXML
     private void RegistroClienteAction(ActionEvent event) throws IOException {
-        AnchorPane root3 = FXMLLoader.load(getClass().getResource("ClienteModule.fxml"));  
+        AnchorPane root3 = FXMLLoader.load(getClass().getResource("ClienteModule.fxml"));
         IdAnchorPane.getChildren().add(root3);
     }
 
     @FXML
     private void InventarioAction(ActionEvent event) throws IOException {
-        AnchorPane root4 = FXMLLoader.load(getClass().getResource("InventarioModule.fxml"));  
+        AnchorPane root4 = FXMLLoader.load(getClass().getResource("InventarioModule.fxml"));
         IdAnchorPane.getChildren().add(root4);
     }
 
     @FXML
     private void TipoDocumentoAction(ActionEvent event) throws IOException {
-        AnchorPane root5 = FXMLLoader.load(getClass().getResource("TipoDocumentoModule.fxml"));  
+        AnchorPane root5 = FXMLLoader.load(getClass().getResource("TipoDocumentoModule.fxml"));
         IdAnchorPane.getChildren().add(root5);
     }
 
     @FXML
     private void PagosAction(ActionEvent event) throws IOException {
-        AnchorPane root6 = FXMLLoader.load(getClass().getResource("PagosModule.fxml"));  
+        AnchorPane root6 = FXMLLoader.load(getClass().getResource("PagosModule.fxml"));
         IdAnchorPane.getChildren().add(root6);
     }
 
     @FXML
     private void ProductosAction(ActionEvent event) throws IOException {
-        AnchorPane root7 = FXMLLoader.load(getClass().getResource("ProductosModule.fxml"));  
+        AnchorPane root7 = FXMLLoader.load(getClass().getResource("ProductosModule.fxml"));
         IdAnchorPane.getChildren().add(root7);
     }
 
     @FXML
     private void CargoAction(ActionEvent event) throws IOException {
-        AnchorPane root8 = FXMLLoader.load(getClass().getResource("CargoModule.fxml"));  
+        AnchorPane root8 = FXMLLoader.load(getClass().getResource("CargoModule.fxml"));
         IdAnchorPane.getChildren().add(root8);
+    }
+
+    @FXML
+    private void EmpleadosAction(ActionEvent event) throws IOException {
+        AnchorPane root9 = FXMLLoader.load(getClass().getResource("EmpleadoModule.fxml"));
+        IdAnchorPane.getChildren().add(root9);
+    }
+
+    @FXML
+    private void TipoClienteAction(ActionEvent event) throws IOException {
+        AnchorPane root10 = FXMLLoader.load(getClass().getResource("TipoClienteModule.fxml"));
+        IdAnchorPane.getChildren().add(root10);
+    }
+
+    @FXML
+    private void ProveedorAction(ActionEvent event) throws IOException {
+        AnchorPane root11 = FXMLLoader.load(getClass().getResource("ProveedorModule.fxml"));
+        IdAnchorPane.getChildren().add(root11);
     }
 
 }

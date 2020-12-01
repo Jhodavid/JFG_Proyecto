@@ -10,38 +10,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.CargoModuleController">
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.CargoModuleController">
    <children>
-      <ImageView fitHeight="631.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="673.0" fitWidth="753.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img/Registro%20Cargo.png" />
          </image>
       </ImageView>
-      <Label layoutX="275.0" layoutY="220.0" text="Salario:">
+      <Label layoutX="355.0" layoutY="220.0" text="Salario:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_id" layoutX="221.0" layoutY="113.0" promptText="Digite la ID" />
-      <Label layoutX="238.0" layoutY="155.0" text="Nombre del cargo:">
+      <TextField fx:id="txt_id" layoutX="301.0" layoutY="113.0" promptText="Digite la ID" />
+      <Label layoutX="318.0" layoutY="155.0" text="Nombre del cargo:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_nombre" layoutX="224.0" layoutY="183.0" promptText="Digite el nombre" />
+      <TextField fx:id="txt_nombre" layoutX="304.0" layoutY="183.0" promptText="Digite el nombre" />
       <Button fx:id="bt_registrar" layoutX="57.0" layoutY="298.0" mnemonicParsing="false" onAction="#bt_registrarAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
-      <TableView fx:id="CargoTable" layoutX="14.0" layoutY="353.0" onMouseClicked="#getSelectedMouse" opacity="0.9" prefHeight="265.0" prefWidth="578.0">
+      <TableView fx:id="CargoTable" layoutX="14.0" layoutY="353.0" onMouseClicked="#getSelectedMouse" opacity="0.9" prefHeight="306.0" prefWidth="725.0">
         <columns>
-          <TableColumn fx:id="tb_id" prefWidth="87.0" text="ID" />
-          <TableColumn fx:id="tb_nombre" prefWidth="245.0" text="Nombre" />
-            <TableColumn fx:id="tb_salario" prefWidth="245.0" text="Salario" />
+          <TableColumn fx:id="tb_id" prefWidth="120.0" text="ID" />
+          <TableColumn fx:id="tb_nombre" prefWidth="314.0" text="Nombre" />
+            <TableColumn fx:id="tb_salario" prefWidth="284.0" text="Salario" />
         </columns>
       </TableView>
-      <Label layoutX="269.0" layoutY="80.0" text="ID Cargo:">
+      <Label layoutX="349.0" layoutY="80.0" text="ID Cargo:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_salario" layoutX="223.0" layoutY="245.0" promptText="Digite el salario " />
+      <TextField fx:id="txt_salario" layoutX="303.0" layoutY="245.0" promptText="Digite el salario " />
       <Button fx:id="bt_modificar" layoutX="241.0" layoutY="298.0" mnemonicParsing="false" onAction="#Edit" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Modificar" />
-      <Button fx:id="bt_eliminar" layoutX="430.0" layoutY="298.0" mnemonicParsing="false" onAction="#Deleted" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
-      <Button fx:id="bt_nuevo" layoutX="57.0" layoutY="223.0" mnemonicParsing="false" onAction="#bt_nuevoAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Limpiar" />
+      <Button fx:id="bt_eliminar" layoutX="610.0" layoutY="298.0" mnemonicParsing="false" onAction="#Deleted" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Eliminar" />
+      <Button fx:id="bt_nuevo" layoutX="429.0" layoutY="298.0" mnemonicParsing="false" onAction="#bt_nuevoAction" prefHeight="35.0" prefWidth="110.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Limpiar" />
    </children>
 </AnchorPane>
