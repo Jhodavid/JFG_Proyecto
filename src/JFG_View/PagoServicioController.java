@@ -90,7 +90,7 @@ public class PagoServicioController implements Initializable {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT `jfg_tiposervicio`.`TiSe_Id`, `jfg_tiposervicio`.`TiSe_TipoServicio`\n" +
-"FROM `jfg_tiposervicio`;");
+                                   "FROM `jfg_tiposervicio`;");
 
             while (rs.next()) {
                 CmbTipoServicio.getItems().addAll(rs.getString("TiSe_TipoServicio"));
@@ -117,10 +117,12 @@ public class PagoServicioController implements Initializable {
         try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
-            rs = stmt.executeQuery("select * from jfg_pagoservicio");
+            rs = stmt.executeQuery("SELECT `jfg_pagoservicio`.`PaSe_Id`, `jfg_tiposervicio`.`TiSe_TipoServicio`, `jfg_pagoservicio`.`PaSe_Precio`, `jfg_pagoservicio`.`Pase_Fecha`\n" +
+                                   "FROM `jfg_pagoservicio` \n" +
+                                   "LEFT JOIN `jfg_tiposervicio` ON `jfg_pagoservicio`.`TiSe_Id` = `jfg_tiposervicio`.`TiSe_Id`;");
 
             while (rs.next()) {
-                PServicioList.add(new ModelServicio(rs.getString("PaSe_Id"), rs.getString("PaSe_Precio"), rs.getString("Pase_Fecha")));
+                PServicioList.add(new ModelServicio(rs.getString("PaSe_Id"), rs.getString("TiSe_TipoServicio"), rs.getString("PaSe_Precio"), rs.getString("Pase_Fecha")));
             }
 
         } catch (SQLException ex) {
@@ -170,13 +172,26 @@ public class PagoServicioController implements Initializable {
     @FXML
     private void btn_registrar(ActionEvent event) {
         
-        String Caracter =  TxtFechaServicio.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
- 
+        String Caracter =  TxtFechaServicio.getValue().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        System.out.println(Caracter);
        
             try {
             stmt = con.createStatement();
-                
-            stmt.executeUpdate("insert into jfg_pagoservicio values(null," + TxtPrecioServicio.getText()+ "," + Caracter + ","+ rs.getString("TiSe_Id")+ ")");
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("SELECT `jfg_tiposervicio`.*\n" +
+                                   "FROM `jfg_tiposervicio`;");
+            
+            String enteroid = null;
+            while (rs.next()) {
+                if(rs.getString("tise_id").equals(CmbTipoServicio.getSelectionModel().getSelectedItem().toString())){
+                    enteroid = rs.getString("tise_id");
+                }
+            }
+            
+                System.out.println(CmbTipoServicio.getSelectionModel().getSelectedItem());
+                System.out.println();
+            
+            stmt.executeUpdate("insert into jfg_pagoservicio values(null," + TxtPrecioServicio.getText()+ "," + Caracter + ","+ enteroid + ")");
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
             Nuevo();
             index = -1;

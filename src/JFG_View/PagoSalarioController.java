@@ -90,7 +90,7 @@ public class PagoSalarioController implements Initializable {
                                    "FROM `jfg_pagosalario` \n" +
                                    "LEFT JOIN `jfg_personas` ON `jfg_pagosalario`.`Per_Id` = `jfg_personas`.`Per_Id`\n" +
                                    ", `jfg_cargo`;");
-
+            
             while (rs.next()) {
                 salarioList.add(new ModelSalario(rs.getString("PaSe_Id"), rs.getString("Per_Nombres")+" "+rs.getString("Per_Apellidos"), rs.getString("Car_Cargo"), rs.getString("Car_Salario"), rs.getString("PaSe_Fecha")));
             }
