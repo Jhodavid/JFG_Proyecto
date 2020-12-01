@@ -67,6 +67,8 @@ public class JFG_PrincipalController implements Initializable {
     private Button BtCerrarSesión;
     @FXML
     private AnchorPane IdAnchorPane;
+    @FXML
+    private Button BtTipoDocumento1;
 
     /**
      * Initializes the controller class.
@@ -78,11 +80,34 @@ public class JFG_PrincipalController implements Initializable {
     }
 
     @FXML
-    private void FacturaAction(ActionEvent event) throws IOException {
-        
+    private void FacturaAction(ActionEvent event) throws IOException {        
         AnchorPane root1 = FXMLLoader.load(getClass().getResource("FacturaModule.fxml"));  
         IdAnchorPane.getChildren().add(root1);   
             
+    }
+
+    @FXML
+    private void TipoServiciosAction(ActionEvent event) throws IOException {
+        AnchorPane root2 = FXMLLoader.load(getClass().getResource("TipoServicioModule.fxml"));  
+        IdAnchorPane.getChildren().add(root2);
+    }
+
+    @FXML
+    private void RegistroClienteAction(ActionEvent event) throws IOException {
+        AnchorPane root3 = FXMLLoader.load(getClass().getResource("ClienteModule.fxml"));  
+        IdAnchorPane.getChildren().add(root3);
+    }
+
+    @FXML
+    private void InventarioAction(ActionEvent event) throws IOException {
+        AnchorPane root4 = FXMLLoader.load(getClass().getResource("InventarioModule.fxml"));  
+        IdAnchorPane.getChildren().add(root4);
+    }
+
+    @FXML
+    private void TipoDocumentoAction(ActionEvent event) throws IOException {
+        AnchorPane root5 = FXMLLoader.load(getClass().getResource("TipoDocumentoModule.fxml"));  
+        IdAnchorPane.getChildren().add(root5);
     }
 
 }

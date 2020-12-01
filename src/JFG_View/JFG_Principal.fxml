@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="689.0" prefWidth="1000.0" style="-fx-border-radius: 30 30 30 30; -fx-border-width: 2; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.JFG_PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="688.0" prefWidth="1002.0" style="-fx-border-radius: 30 30 30 30; -fx-border-width: 2; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.JFG_PrincipalController">
    <children>
-      <ImageView fitHeight="689.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="698.0" fitWidth="1002.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img/Principal.png" />
          </image>
@@ -19,52 +19,57 @@
          <children>
             <Button fx:id="BtFactura" mnemonicParsing="false" onAction="#FacturaAction" prefHeight="32.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Factura">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="BtCliente" mnemonicParsing="false" prefHeight="20.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Cliente">
+            <Button fx:id="BtCliente" mnemonicParsing="false" onAction="#RegistroClienteAction" prefHeight="20.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Cliente">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="BtInventario" mnemonicParsing="false" prefHeight="10.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Inventario">
+            <Button fx:id="BtInventario" mnemonicParsing="false" onAction="#InventarioAction" prefHeight="10.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Inventario">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
             <Button fx:id="BtProductos" mnemonicParsing="false" prefHeight="6.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Productos">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
             <Button fx:id="BtTipoCliente" mnemonicParsing="false" prefHeight="9.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Tipo Cliente">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="BtTipoDocumento" mnemonicParsing="false" prefHeight="19.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Tipo Documento">
+            <Button fx:id="BtTipoDocumento" mnemonicParsing="false" onAction="#TipoDocumentoAction" prefHeight="19.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Tipo Documento">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="BtTipoDocumento1" mnemonicParsing="false" onAction="#TipoServiciosAction" prefHeight="19.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Tipo Servicios">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
             <Button fx:id="BtPagos" mnemonicParsing="false" prefHeight="21.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Pagos">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
             <Button fx:id="BtEmpleados" mnemonicParsing="false" prefHeight="13.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Empleado">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
             <Button fx:id="BtProveedor" mnemonicParsing="false" prefHeight="13.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Proveedor">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
             <Button fx:id="BtCargo" mnemonicParsing="false" prefHeight="13.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Cargo">
                <font>
-                  <Font name="Berlin Sans FB" size="19.0" />
+                  <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
          </children>
@@ -90,11 +95,11 @@
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="BtCerrarSesión" layoutX="63.0" layoutY="655.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="137.0" style="-fx-border-radius: 30 30 30 30; -fx-border-color: #FD5D5D; -fx-border-width: 2; -fx-background-radius: 30; -fx-background-color: red;" text="Cerrar Sesión">
+      <AnchorPane fx:id="IdAnchorPane" layoutX="240.0" layoutY="6.0" prefHeight="674.0" prefWidth="753.0" />
+      <Button fx:id="BtCerrarSesión" layoutX="61.0" layoutY="658.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="137.0" style="-fx-border-radius: 30 30 30 30; -fx-border-color: #FD5D5D; -fx-border-width: 2; -fx-background-radius: 30; -fx-background-color: red;" text="Cerrar Sesión">
          <font>
             <Font name="Berlin Sans FB" size="10.0" />
          </font>
       </Button>
-      <AnchorPane fx:id="IdAnchorPane" layoutX="238.0" layoutY="6.0" prefHeight="678.0" prefWidth="753.0" />
    </children>
 </AnchorPane>

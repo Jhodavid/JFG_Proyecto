@@ -11,54 +11,54 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.ClienteModuleController">
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.ClienteModuleController">
    <children>
-      <ImageView fitHeight="645.0" fitWidth="590.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="673.0" fitWidth="753.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img/Registro%20de%20clientes.png" />
          </image>
       </ImageView>
-      <Label layoutX="147.0" layoutY="81.0" text="ID:">
+      <Label layoutX="216.0" layoutY="83.0" text="ID:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="146.0" layoutY="114.0" text="DNI:">
+      <Label layoutX="215.0" layoutY="116.0" text="DNI:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="145.0" layoutY="146.0" text="Nombres:">
+      <Label layoutX="214.0" layoutY="148.0" text="Nombres:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="146.0" layoutY="180.0" text="Apellidos:">
+      <Label layoutX="215.0" layoutY="182.0" text="Apellidos:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_id" layoutX="244.0" layoutY="79.0" prefHeight="25.0" prefWidth="159.0" promptText="Digite ID " />
-      <TextField fx:id="txt_dni" layoutX="244.0" layoutY="112.0" prefHeight="25.0" prefWidth="159.0" />
-      <TextField fx:id="txt_nombre" layoutX="244.0" layoutY="144.0" prefHeight="25.0" prefWidth="159.0" />
-      <TextField fx:id="txt_apellidos" layoutX="244.0" layoutY="178.0" prefHeight="25.0" prefWidth="159.0" />
-      <TextField fx:id="txt_correo" layoutX="244.0" layoutY="213.0" prefHeight="25.0" prefWidth="159.0" />
-      <Label layoutX="147.0" layoutY="215.0" text="Correo:">
+      <TextField fx:id="txt_id" layoutX="313.0" layoutY="81.0" prefHeight="25.0" prefWidth="159.0" promptText="Digite ID " />
+      <TextField fx:id="txt_dni" layoutX="313.0" layoutY="114.0" prefHeight="25.0" prefWidth="159.0" />
+      <TextField fx:id="txt_nombre" layoutX="313.0" layoutY="146.0" prefHeight="25.0" prefWidth="159.0" />
+      <TextField fx:id="txt_apellidos" layoutX="313.0" layoutY="180.0" prefHeight="25.0" prefWidth="159.0" />
+      <TextField fx:id="txt_correo" layoutX="313.0" layoutY="215.0" prefHeight="25.0" prefWidth="159.0" />
+      <Label layoutX="216.0" layoutY="217.0" text="Correo:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Button fx:id="bt_buscar" layoutX="427.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
-      <Button fx:id="bt_registrar" layoutX="257.0" layoutY="309.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
-      <TableView layoutX="14.0" layoutY="363.0" opacity="0.9" prefHeight="266.0" prefWidth="564.0">
+      <Button fx:id="bt_buscar" layoutX="496.0" layoutY="76.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
+      <Button fx:id="bt_registrar" layoutX="326.0" layoutY="311.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Registrar" />
+      <TableView layoutX="14.0" layoutY="363.0" opacity="0.9" prefHeight="295.0" prefWidth="727.0">
         <columns>
           <TableColumn fx:id="tb_id" prefWidth="39.0" text="ID" />
-          <TableColumn fx:id="tb_dni" prefWidth="93.0" text="DNI" />
-            <TableColumn fx:id="tb_nombres" prefWidth="93.0" text="Nombres" />
-            <TableColumn fx:id="tb_apellidos" prefWidth="99.0" text="Apellidos" />
-            <TableColumn fx:id="tb_correo" prefWidth="145.0" text="Correo" />
-            <TableColumn fx:id="tb_tipocliente" prefWidth="94.0" text="Tipo Cliente" />
+          <TableColumn fx:id="tb_dni" prefWidth="80.33332824707031" text="DNI" />
+            <TableColumn fx:id="tb_nombres" prefWidth="125.66668701171875" text="Nombres" />
+            <TableColumn fx:id="tb_apellidos" prefWidth="153.66668701171875" text="Apellidos" />
+            <TableColumn fx:id="tb_correo" prefWidth="201.33331298828125" text="Correo" />
+            <TableColumn fx:id="tb_tipocliente" prefWidth="129.0" text="Tipo Cliente" />
         </columns>
       </TableView>
-      <Label layoutX="147.0" layoutY="258.0" text="Tipo cliente:">
+      <Label layoutX="216.0" layoutY="260.0" text="Tipo cliente:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <ComboBox fx:id="cbx_tipocliente" layoutX="244.0" layoutY="254.0" prefHeight="25.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
+      <ComboBox fx:id="cbx_tipocliente" layoutX="313.0" layoutY="256.0" prefHeight="25.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-border-radius: 30 30 30 30; -fx-border-color: grey; -fx-background-insets: 0 0 0 0, 0, 1, 2;" />
    </children>
 </AnchorPane>

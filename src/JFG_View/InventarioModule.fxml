@@ -10,29 +10,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="544.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.InventarioModuleController">
+<AnchorPane id="AnchorPane" prefHeight="673.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.InventarioModuleController">
    <children>
-      <ImageView fitHeight="562.0" fitWidth="600.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="688.0" fitWidth="753.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Img/Fondo%20Inventario.png" />
          </image>
       </ImageView>
-      <Label layoutX="300.0" layoutY="78.0" text="ID:">
+      <Label layoutX="357.0" layoutY="87.0" text="ID:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_id" layoutX="235.0" layoutY="108.0" promptText="Digite ID producto" />
-      <Label layoutX="280.0" layoutY="150.0" text="Nombre:">
+      <TextField fx:id="txt_id" layoutX="292.0" layoutY="117.0" promptText="Digite ID producto" />
+      <Label layoutX="337.0" layoutY="159.0" text="Nombre:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <TextField fx:id="txt_nombre" layoutX="235.0" layoutY="187.0" promptText="Digite Nombre producto" />
-      <Button fx:id="bt_buscar" layoutX="264.0" layoutY="226.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
-      <TableView layoutX="14.0" layoutY="279.0" opacity="0.9" prefHeight="271.0" prefWidth="572.0">
+      <TextField fx:id="txt_nombre" layoutX="292.0" layoutY="196.0" promptText="Digite Nombre producto" />
+      <Button fx:id="bt_buscar" layoutX="321.0" layoutY="235.0" mnemonicParsing="false" style="-fx-border-radius: 30 30 30 30; -fx-padding: 5 22 5 22; -fx-border-color: grey; -fx-border-width: 2; -fx-background-radius: 30; -fx-font-family: Segoe UI; -fx-font-size: 11pt; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Buscar" />
+      <TableView layoutX="70.0" layoutY="320.0" opacity="0.9" prefHeight="337.0" prefWidth="632.0">
         <columns>
-          <TableColumn fx:id="tb_id" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="tb_nombre" prefWidth="303.0" text="Nombre" />
-            <TableColumn fx:id="tb_cantidad" prefWidth="193.0" text="Cantidad" />
+          <TableColumn fx:id="tb_id" prefWidth="124.0" text="ID" />
+          <TableColumn fx:id="tb_nombre" prefWidth="225.0" text="Nombre" />
+            <TableColumn fx:id="tb_cantidad" prefWidth="377.0" text="Cantidad" />
         </columns>
       </TableView>
    </children>
