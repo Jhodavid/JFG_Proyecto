@@ -8,6 +8,7 @@ package JFG_Models;
 public class ModelTservicio {
     String TiSe_Id ;
     String TiSe_TipoServicio;
+  
     
     public ModelTservicio(String TiSe_Id, String TiSe_TipoServicio) {
         this.TiSe_Id = TiSe_Id;

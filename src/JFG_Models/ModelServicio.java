@@ -7,13 +7,23 @@ package JFG_Models;
  */
 public class ModelServicio {
     String PaSe_Id;
-    String TiSe_TipoServicio;
     String PaSe_Precio;
     String Pase_Fecha;
+    String TiSe_TipoServicio;
 
-    public ModelServicio(String PaSe_Id, String TiSe_TipoServicio, String PaSe_Precio, String Pase_Fecha) {
-        this.PaSe_Id = PaSe_Id;
+  
+
+    public String getTiSe_TipoServicio() {
+        return TiSe_TipoServicio;
+    }
+
+    public void setTiSe_TipoServicio(String TiSe_TipoServicio) {
         this.TiSe_TipoServicio = TiSe_TipoServicio;
+    }
+
+    public ModelServicio(String PaSe_Id,  String PaSe_Precio, String Pase_Fecha) {
+        this.PaSe_Id = PaSe_Id;
+       
         this.PaSe_Precio = PaSe_Precio;
         this.Pase_Fecha = Pase_Fecha;
     }
@@ -26,13 +36,7 @@ public class ModelServicio {
         this.PaSe_Id = PaSe_Id;
     }
 
-    public String getTiSe_TipoServicio() {
-        return TiSe_TipoServicio;
-    }
-
-    public void setTiSe_TipoServicio(String TiSe_TipoServicio) {
-        this.TiSe_TipoServicio = TiSe_TipoServicio;
-    }
+    
 
     public String getPaSe_Precio() {
         return PaSe_Precio;

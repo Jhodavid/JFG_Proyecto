@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package JFG_View;
-
 import JFG_Controller.JFG_Operations;
 import JFG_Controller.MysqlConnect;
 import JFG_Models.ModelServicio;
@@ -37,6 +36,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javax.swing.JOptionPane;
 
+import JFG_Models.ModelServicio;
+
 /**
  * FXML Controller class
  *
@@ -44,6 +45,10 @@ import javax.swing.JOptionPane;
  */
 public class PagoServicioController implements Initializable {
     
+ 
+    
+    String enteroid = null;
+     String TipoServicio = null;
     JFG_Operations op = new JFG_Operations();
     String usuario = "root";
     String clave = "";
@@ -86,15 +91,18 @@ public class PagoServicioController implements Initializable {
 
     
      public void ComboBox(){
+       
+        String id;
          try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT `jfg_tiposervicio`.`TiSe_Id`, `jfg_tiposervicio`.`TiSe_TipoServicio`\n" +
-                                   "FROM `jfg_tiposervicio`;");
+            rs = stmt.executeQuery("select * from jfg_tiposervicio");
 
             while (rs.next()) {
+                
                 CmbTipoServicio.getItems().addAll(rs.getString("TiSe_TipoServicio"));
-             
+               
+               
             }
                
 
@@ -105,7 +113,7 @@ public class PagoServicioController implements Initializable {
     
     
       public void Listar() {
-
+        
         ObservableList<ModelServicio> PServicioList = FXCollections.observableArrayList();
 
         try {
@@ -117,20 +125,19 @@ public class PagoServicioController implements Initializable {
         try {
             con = DriverManager.getConnection(url, usuario, clave);
             stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT `jfg_pagoservicio`.`PaSe_Id`, `jfg_tiposervicio`.`TiSe_TipoServicio`, `jfg_pagoservicio`.`PaSe_Precio`, `jfg_pagoservicio`.`Pase_Fecha`\n" +
-                                   "FROM `jfg_pagoservicio` \n" +
-                                   "LEFT JOIN `jfg_tiposervicio` ON `jfg_pagoservicio`.`TiSe_Id` = `jfg_tiposervicio`.`TiSe_Id`;");
+            rs = stmt.executeQuery("select * from jfg_pagoservicio");
 
             while (rs.next()) {
-                PServicioList.add(new ModelServicio(rs.getString("PaSe_Id"), rs.getString("TiSe_TipoServicio"), rs.getString("PaSe_Precio"), rs.getString("Pase_Fecha")));
+                PServicioList.add(new ModelServicio(rs.getString("PaSe_Id"),  rs.getString("PaSe_Precio"), rs.getString("Pase_Fecha")));
             }
+            
 
         } catch (SQLException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+      
         tb_idServicio.setCellValueFactory(new PropertyValueFactory<>("PaSe_Id"));
-        tb_TipoServicio.setCellValueFactory(new PropertyValueFactory<>("TiSe_TipoServicio"));
+        tb_TipoServicio.setCellValueFactory(new PropertyValueFactory<>(TipoServicio));
         tb_precio.setCellValueFactory(new PropertyValueFactory<>("PaSe_Precio"));
         tb_fecha.setCellValueFactory(new PropertyValueFactory<>("Pase_Fecha"));
        
@@ -153,7 +160,7 @@ public class PagoServicioController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         ComboBox();
         TxtIdServicio.setEditable(false);
-        
+     
     }    
 
     @FXML
@@ -174,30 +181,36 @@ public class PagoServicioController implements Initializable {
         
         String Caracter =  TxtFechaServicio.getValue().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         System.out.println(Caracter);
-       
+        String servicio;
+        
             try {
             stmt = con.createStatement();
             stmt = con.createStatement();
-            rs = stmt.executeQuery("SELECT `jfg_tiposervicio`.*\n" +
-                                   "FROM `jfg_tiposervicio`;");
-            
-            String enteroid = null;
+             rs = stmt.executeQuery("select * from jfg_tiposervicio");
+
             while (rs.next()) {
-                if(rs.getString("tise_id").equals(CmbTipoServicio.getSelectionModel().getSelectedItem().toString())){
-                    enteroid = rs.getString("tise_id");
+                
+                CmbTipoServicio.getItems().addAll(rs.getString("TiSe_TipoServicio"));
+               
+                servicio = CmbTipoServicio.getSelectionModel().getSelectedItem();
+               
+                
+             if (rs.getString("TiSe_TipoServicio").equals(servicio)){
+                   TipoServicio = rs.getString("TiSe_TipoServicio");
+                   System.out.println("hola");
+                }
+             if(rs.getString("TiSe_TipoServicio").equals(servicio)){
+                    enteroid = rs.getString("TiSe_Id");
+                    System.out.println("hola caracola");
                 }
             }
-            
-                System.out.println(CmbTipoServicio.getSelectionModel().getSelectedItem());
-                System.out.println();
-            
             stmt.executeUpdate("insert into jfg_pagoservicio values(null," + TxtPrecioServicio.getText()+ "," + Caracter + ","+ enteroid + ")");
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
-            Nuevo();
+            
             index = -1;
         } catch (SQLException ex) {
             Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
-                System.out.println("holis");
+              
 
         }
         Listar();
