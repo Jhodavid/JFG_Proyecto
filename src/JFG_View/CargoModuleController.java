@@ -21,7 +21,6 @@ import JFG_Models.ModelCargo;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.Statement;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,7 +48,6 @@ public class CargoModuleController implements Initializable {
     Connection con;
     Statement stmt;
     ResultSet rs;
-    PreparedStatement pst = null;
 
     int index = -1;
 
@@ -81,12 +79,6 @@ public class CargoModuleController implements Initializable {
     public void Listar() {
 
         ObservableList<ModelCargo> cargoList = FXCollections.observableArrayList();
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MysqlConnect.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
         try {
             con = DriverManager.getConnection(url, usuario, clave);

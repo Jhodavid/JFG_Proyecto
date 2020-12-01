@@ -116,4 +116,16 @@ public class JFG_PrincipalController implements Initializable {
         IdAnchorPane.getChildren().add(root6);
     }
 
+    @FXML
+    private void ProductosAction(ActionEvent event) throws IOException {
+        AnchorPane root7 = FXMLLoader.load(getClass().getResource("ProductosModule.fxml"));  
+        IdAnchorPane.getChildren().add(root7);
+    }
+
+    @FXML
+    private void CargoAction(ActionEvent event) throws IOException {
+        AnchorPane root8 = FXMLLoader.load(getClass().getResource("CargoModule.fxml"));  
+        IdAnchorPane.getChildren().add(root8);
+    }
+
 }

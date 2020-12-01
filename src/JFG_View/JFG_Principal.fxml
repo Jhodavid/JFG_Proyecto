@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="688.0" prefWidth="1002.0" style="-fx-border-radius: 30 30 30 30; -fx-border-width: 2; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.JFG_PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="688.0" prefWidth="1002.0" style="-fx-border-radius: 30 30 30 30; -fx-border-width: 2; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JFG_View.JFG_PrincipalController">
    <children>
       <ImageView fitHeight="698.0" fitWidth="1002.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -32,7 +32,7 @@
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="BtProductos" mnemonicParsing="false" prefHeight="6.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Productos">
+            <Button fx:id="BtProductos" mnemonicParsing="false" onAction="#ProductosAction" prefHeight="6.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Productos">
                <font>
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="BtCargo" mnemonicParsing="false" prefHeight="13.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Cargo">
+            <Button fx:id="BtCargo" mnemonicParsing="false" onAction="#CargoAction" prefHeight="13.0" prefWidth="207.0" style="-fx-background-radius: 30 0 0 30; -fx-border-color: #E8FAFA; -fx-border-radius: 30 0 0 30; -fx-background-insets: 0 0 0 0, 0, 1, 2;" text="Cargo">
                <font>
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
