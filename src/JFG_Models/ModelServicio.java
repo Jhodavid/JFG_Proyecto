@@ -21,7 +21,7 @@ public class ModelServicio {
         this.TiSe_TipoServicio = TiSe_TipoServicio;
     }
 
-    public ModelServicio(String PaSe_Id,  String PaSe_Precio, String Pase_Fecha) {
+    public ModelServicio(String PaSe_Id,  String PaSe_Precio, String Pase_Fecha, String TiSe_TipoServicio) {
         this.PaSe_Id = PaSe_Id;
        
         this.PaSe_Precio = PaSe_Precio;

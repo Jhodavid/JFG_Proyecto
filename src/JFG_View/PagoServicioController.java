@@ -56,7 +56,6 @@ public class PagoServicioController implements Initializable {
     Connection con;
     Statement stmt;
     ResultSet rs;
-    ResultSet rs2;
     PreparedStatement pst = null;
     int index = -1;
 
@@ -101,8 +100,7 @@ public class PagoServicioController implements Initializable {
             while (rs.next()) {
                 
                 CmbTipoServicio.getItems().addAll(rs.getString("TiSe_TipoServicio"));
-               
-               
+              
             }
                
 
@@ -128,7 +126,8 @@ public class PagoServicioController implements Initializable {
             rs = stmt.executeQuery("select * from jfg_pagoservicio");
 
             while (rs.next()) {
-                PServicioList.add(new ModelServicio(rs.getString("PaSe_Id"),  rs.getString("PaSe_Precio"), rs.getString("Pase_Fecha")));
+                PServicioList.add(new ModelServicio(rs.getString("PaSe_Id"),  rs.getString("PaSe_Precio"), rs.getString("Pase_Fecha"), TipoServicio));
+                
             }
             
 
@@ -137,7 +136,7 @@ public class PagoServicioController implements Initializable {
         }
       
         tb_idServicio.setCellValueFactory(new PropertyValueFactory<>("PaSe_Id"));
-        tb_TipoServicio.setCellValueFactory(new PropertyValueFactory<>(TipoServicio));
+        tb_TipoServicio.setCellValueFactory(new PropertyValueFactory<>("TiSe_TipoServicio"));
         tb_precio.setCellValueFactory(new PropertyValueFactory<>("PaSe_Precio"));
         tb_fecha.setCellValueFactory(new PropertyValueFactory<>("Pase_Fecha"));
        
