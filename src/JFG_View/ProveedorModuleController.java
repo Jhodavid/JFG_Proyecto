@@ -154,7 +154,7 @@ public class ProveedorModuleController implements Initializable {
             }
         }
     }
-
+    
     @FXML
     private void GetSelected(MouseEvent event) {
         index = ProveedoresId.getSelectionModel().getSelectedIndex();
